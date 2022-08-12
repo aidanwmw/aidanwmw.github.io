@@ -1,6 +1,6 @@
 ### Index
 <a href="index.md">Home</a>
-<a href="about.md">About Me</a>
+<a href="about.html">About Me</a>
 
 ## Welcome to my Github pages
 
