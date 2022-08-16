@@ -1,0 +1,1086 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Big Bang Nucleosynthesis &#8212; iPyBBN - An Interactive Overview of Big Bang Nucleosynthesis</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/bigbang.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">iPyBBN - An Interactive Overview of Big Bang Nucleosynthesis</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="thermo.html">
+   Thermodynamics and Expansion, en bref
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown-notebooks.html">
+   Notebooks with MyST Markdown
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/writeuptest.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fwriteuptest.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/writeuptest.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thermodynamics-of-the-early-universe">
+   Thermodynamics of the Early Universe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#weak-rates">
+   Weak Rates
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strong-rates-and-differential-equation-structure">
+   Strong Rates and Differential Equation Structure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nuclear-statistical-equilibrium-and-the-saha-equation">
+   Nuclear Statistical Equilibrium and the Saha Equation
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Big Bang Nucleosynthesis</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thermodynamics-of-the-early-universe">
+   Thermodynamics of the Early Universe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#weak-rates">
+   Weak Rates
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strong-rates-and-differential-equation-structure">
+   Strong Rates and Differential Equation Structure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nuclear-statistical-equilibrium-and-the-saha-equation">
+   Nuclear Statistical Equilibrium and the Saha Equation
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="big-bang-nucleosynthesis">
+<h1>Big Bang Nucleosynthesis<a class="headerlink" href="#big-bang-nucleosynthesis" title="Permalink to this headline">#</a></h1>
+<p>In this code, we will set up and solve nucleosynthesis in the early universe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import Statements</span>
+<span class="kn">from</span> <span class="nn">constants</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">rates</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span><span class="p">,</span> <span class="n">solve_ivp</span><span class="p">,</span> <span class="n">cumtrapz</span><span class="p">,</span> <span class="n">quadrature</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">figure</span>
+<span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="kn">import</span> <span class="n">interp1d</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">approx_fprime</span>
+<span class="c1">#import numdifftools as ndt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Import Statements</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">constants</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">rates</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;constants&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="thermodynamics-of-the-early-universe">
+<h2>Thermodynamics of the Early Universe<a class="headerlink" href="#thermodynamics-of-the-early-universe" title="Permalink to this headline">#</a></h2>
+<p>From Wagoner, Fowler, and Hoyle’s 1967 <em>Synthesis of Elements</em>, we have that, from the Friedman equations,</p>
+<div class="math notranslate nohighlight">
+\[\frac{dT}{dt} = \frac{d\rho}{dt} \cdot \frac{dT}{d\rho} = 3H(\rho + pc^2) \cdot \frac{dT}{d\rho} = (24 \pi G \rho)^{1/2} \left(\rho_{\rm rad} + p_{\rm rad}/c^2\right) \left( \frac{d\rho_{\rm rad}}{dT}\right)^{-1}\]</div>
+<p>Which they show can be integrated (from <span class="math notranslate nohighlight">\(t=0\)</span> and <span class="math notranslate nohighlight">\(T = \infty\)</span>) to give that</p>
+<div class="math notranslate nohighlight">
+\[T = (12 \pi G \sigma c^{-2})^{1/4}t^{-1/2}\]</div>
+<p>Which corresponds to approximately</p>
+<div class="math notranslate nohighlight">
+\[T_9 \simeq 10.4 t^{-1/2}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(T_9\)</span> is in <span class="math notranslate nohighlight">\(10^9 ~\rm {K}\)</span> and <span class="math notranslate nohighlight">\(t\)</span> is in seconds. So, rearranging, we can get that</p>
+<div class="math notranslate nohighlight">
+\[\boxed{t = \left(\frac{T_9}{10.4}\right)^{-2}}\]</div>
+<p>Furthermore, to find the neutrino temperature, we need to know the radiation energy densities and pressures. We can compute neutrino temperature as a function of photon temperature knowing only the photon and electron energy densities and pressures. More specifically, from Wagoner, we have that the ratio of the photon and neutrino temperatures is</p>
+<div class="math notranslate nohighlight">
+\[\frac{T_\gamma}{T_\nu} = \left(\frac{11}{4} \frac{\rho_\gamma + p_\gamma c^{-2}}{\rho_{\rm rad} + p_{\rm rad} c^{-2}}\right)^{1/3}\]</div>
+<p>Thus, we can rearrange this expression to solve for neutrino temperature:</p>
+<div class="math notranslate nohighlight">
+\[\boxed{T_\nu = T_\gamma \left(\frac{11}{4} \frac{\rho_\gamma + p_\gamma c^{-2}}{\rho_{\rm rad} + p_{\rm rad} c^{-2}}\right)^{-1/3}}\]</div>
+<p>The expressions for these energy pressures and densities can be given as follows:</p>
+<div class="math notranslate nohighlight">
+\[\rho_\gamma = \frac{\pi^2}{15} T_\gamma^4\]</div>
+<p>and
+$<span class="math notranslate nohighlight">\(p_\gamma = \frac{1}{3} \rho_\gamma c^2\)</span>$</p>
+<p>In both these, our temperature is in MeV. So, we convert to <span class="math notranslate nohighlight">\(T_9\)</span>, which gives us that</p>
+<div class="math notranslate nohighlight">
+\[\rho_\gamma \simeq 8.42 T_9^4\]</div>
+<p>and <span class="math notranslate nohighlight">\(p_\gamma\)</span> is the same. For electrons, it is a bit more complicated:</p>
+<div class="math notranslate nohighlight">
+\[\rho_e = \frac{7}{8} \frac{\pi}{15} T_\gamma^4 (M(Z) - 16M(2Z)) = 15.56 T_9^4 (M(Z) - 16M(2Z)) \]</div>
+<p>Where <span class="math notranslate nohighlight">\(Z = \frac{m_ec^2}{k_BT_\gamma} = \frac{5.93}{T_9}\)</span> and <span class="math notranslate nohighlight">\(M(Z)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[M(Z) = \bar K_3(Z) + \frac{Z^2}{24} \bar K_1(Z)\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\bar K_n(Z)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\bar K_n(Z) = \frac{2}{(n-1)!} \left(\frac{Z}{2}\right)^n \cdot K_n(Z)\]</div>
+<p>Where <span class="math notranslate nohighlight">\(K_n\)</span> is the modified Bessel function of the second kind.</p>
+<p>Finally, <span class="math notranslate nohighlight">\(\rho_{\rm rad} = \rho_\gamma + \rho_e\)</span> and <span class="math notranslate nohighlight">\(p_{\rm rad} = p_e + p_\gamma\)</span>. We compute below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Temperature</span><span class="p">(</span><span class="n">Ti</span><span class="p">,</span> <span class="n">Tf</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    
+    <span class="n">T9</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">geomspace</span><span class="p">(</span><span class="n">Ti</span><span class="p">,</span><span class="n">Tf</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="mf">5.93</span><span class="o">/</span><span class="n">T9</span>
+    
+    <span class="n">𝜌𝛾</span> <span class="o">=</span> <span class="mf">8.42</span><span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="mi">4</span>
+    <span class="n">𝜌e</span> <span class="o">=</span> <span class="mf">15.56</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">M</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">16</span> <span class="o">*</span> <span class="n">M</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">z</span><span class="p">))</span>
+    
+    <span class="n">𝜌rad</span> <span class="o">=</span> <span class="n">𝜌𝛾</span> <span class="o">+</span> <span class="n">𝜌e</span>
+    <span class="n">p𝛾</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span> <span class="o">*</span> <span class="n">𝜌𝛾</span>
+    
+    <span class="n">pe</span> <span class="o">=</span> <span class="mf">5.19</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">kbar</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">z</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">16</span> <span class="o">*</span> <span class="n">kbar</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">z</span><span class="p">))</span>
+    <span class="n">prad</span> <span class="o">=</span> <span class="n">p𝛾</span> <span class="o">+</span> <span class="n">pe</span>
+
+    <span class="n">T𝜈</span> <span class="o">=</span> <span class="p">(((</span><span class="mi">11</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">𝜌𝛾</span> <span class="o">+</span> <span class="n">p𝛾</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">𝜌rad</span> <span class="o">+</span> <span class="n">prad</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">T9</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">T𝜈</span><span class="o">/</span><span class="mf">10.4</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">T9</span><span class="p">,</span> <span class="n">T𝜈</span><span class="p">,</span> <span class="n">t</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TPhoton</span><span class="p">,</span> <span class="n">TNeutrino</span><span class="p">,</span> <span class="n">time</span> <span class="o">=</span> <span class="n">Temperature</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">9</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">TPhoton</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">TNeutrino</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Neutrino vs. Photon Temperature&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Temperature $10^9 ~\rm</span><span class="si">{K}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="sa">r</span><span class="s1">&#39;$T_\gamma$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$T_\nu$&#39;</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/writeuptest_4_0.png" src="_images/writeuptest_4_0.png" />
+</div>
+</div>
+</section>
+<section id="weak-rates">
+<h2>Weak Rates<a class="headerlink" href="#weak-rates" title="Permalink to this headline">#</a></h2>
+<p>The weak interactions are those between protons and neutrons. Namely, the following reactions:</p>
+<div class="math notranslate nohighlight">
+\[n + \nu_e \leftrightarrows p + e^-\]</div>
+<div class="math notranslate nohighlight">
+\[n + e^+ \leftrightarrows p + \overline{\nu}_e\]</div>
+<div class="math notranslate nohighlight">
+\[n \leftrightarrows p + e^- + \overline{\nu}_e\]</div>
+<p>We denote the rate <span class="math notranslate nohighlight">\(\lambda_{n \rightarrow p}\)</span> as the sum of all of the forward weak reactions and likewise <span class="math notranslate nohighlight">\(\lambda_{p \rightarrow n}\)</span> as the sum of all the reverse weak reactions. From Kawano 1992, we have that</p>
+<div class="math notranslate nohighlight">
+\[\lambda_{p \rightarrow n} = \frac{1}{\tau} \int_1^\infty dx \frac{x(x+q)^2 (x^2 - 1)^{1/2}}{\left(1+e^{-xz}\right)[1 + e^{(x+q)z_{\nu} + \xi_e}]} + \frac{1}{\tau} \int_1^\infty dx \frac{x(x-q)^2 (x^2 - 1)^{1/2}}{\left(1+e^{xz}\right)[1 + e^{-(x-q)z_{\nu} + \xi_e}]}\]</div>
+<p>and that</p>
+<div class="math notranslate nohighlight">
+\[\lambda_{n \rightarrow p} = \lambda_{n\rightarrow p}(-q,-\xi_e)\]</div>
+<p>Where we have that the variables:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(q = (m_n - m_p)/m_e\)</span> is the neutron-proton mass difference divided by the electron mass</p></li>
+<li><p><span class="math notranslate nohighlight">\(z = m_ec^2/k_B T_\gamma\)</span> is a substitution</p></li>
+<li><p><span class="math notranslate nohighlight">\(z_\nu = m_ec^2/k_B T_\nu\)</span> is the same as <span class="math notranslate nohighlight">\(z\)</span> but for the neutrino temperature</p></li>
+<li><p><span class="math notranslate nohighlight">\(\tau\)</span> is the lifetime of a neutron.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\xi_e\)</span> is the chemical potential of the electron, taken to be zero but included as a manual override such that non-zero <span class="math notranslate nohighlight">\(\xi_e\)</span> can be evaluated if desired.</p></li>
+</ul>
+<p>This is a somewhat cumbersome integral, but can be evaluated quickly using SciPy’s <code class="docutils literal notranslate"><span class="pre">integrate.quad</span></code>, which we do below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">WeakRateAnalytic</span><span class="p">(</span><span class="n">Tγ</span><span class="p">,</span> <span class="n">T𝜈</span><span class="p">,</span> <span class="n">ξe</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Function for computing the weak rates for protons and neutrons.</span>
+<span class="sd">    </span>
+<span class="sd">    INPUT:</span>
+<span class="sd">    T : Temperature matrix of photons and neutrinos in MeV/kB [2 x n ndarray]</span>
+<span class="sd">    </span>
+<span class="sd">    OUTPUT: </span>
+<span class="sd">    lambda_np : Weak rate matrix where the first column is n-&gt;p and the second is p-&gt;n [2 x n ndarray]</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="n">K</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">τ</span>
+
+    <span class="k">def</span> <span class="nf">integrand</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Tγ</span><span class="p">,</span> <span class="n">T𝜈</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="n">q</span><span class="p">):</span>
+        
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Internal method returning the integrand of the weak rates.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">me</span><span class="o">/</span><span class="p">(</span><span class="n">Tγ</span><span class="o">*</span><span class="n">kB</span><span class="p">))</span>
+        <span class="n">z𝜈</span> <span class="o">=</span> <span class="p">(</span><span class="n">me</span><span class="o">/</span><span class="p">(</span><span class="n">T𝜈</span><span class="o">*</span><span class="n">kB</span><span class="p">))</span>
+        <span class="n">IntegrandArray</span> <span class="o">=</span> <span class="n">K</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">q</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="p">((</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">*</span><span class="n">z</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">x</span><span class="o">+</span><span class="n">q</span><span class="p">)</span><span class="o">*</span><span class="n">z𝜈</span> <span class="o">+</span> <span class="n">ξe</span><span class="p">)))</span> <span class="o">+</span>\
+             <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">q</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="p">((</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">z</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">q</span><span class="p">)</span><span class="o">*</span><span class="n">z𝜈</span> <span class="o">+</span> <span class="n">ξe</span><span class="p">))))</span>
+    
+        <span class="k">return</span> <span class="n">IntegrandArray</span>
+
+
+    <span class="k">def</span> <span class="nf">integration</span><span class="p">(</span><span class="n">Tγ</span><span class="p">,</span> <span class="n">T𝜈</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="n">q</span><span class="p">,</span> <span class="n">ξe</span><span class="o">=</span><span class="n">ξe</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Internal method integrating the integrand from 1 to infinity with resepct to x.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        
+        <span class="n">WeakRate</span> <span class="o">=</span> <span class="n">quadrature</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">Tγ</span><span class="p">,</span><span class="n">T𝜈</span><span class="p">,</span><span class="n">q</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+        
+        <span class="k">return</span> <span class="n">WeakRate</span>
+
+    <span class="c1"># Vectorization</span>
+    <span class="n">vec_integration</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">integration</span><span class="p">)</span>
+    
+    <span class="n">lambda_np</span> <span class="o">=</span> <span class="n">vec_integration</span><span class="p">(</span><span class="n">Tγ</span><span class="p">,</span> <span class="n">T𝜈</span><span class="p">)</span>
+    <span class="n">lambda_pn</span> <span class="o">=</span> <span class="n">vec_integration</span><span class="p">(</span><span class="n">Tγ</span><span class="p">,</span> <span class="n">T𝜈</span><span class="p">,</span> <span class="n">q</span><span class="o">=-</span><span class="n">q</span><span class="p">,</span> <span class="n">ξe</span><span class="o">=-</span><span class="n">ξe</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">lambda_np</span><span class="p">,</span> <span class="n">lambda_pn</span>
+
+<span class="k">def</span> <span class="nf">weak_test</span><span class="p">(</span><span class="n">Tγ</span><span class="p">):</span>
+    
+    <span class="c1">#Z = (me/(Tγ*kB))</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="mf">5.93</span><span class="o">/</span><span class="n">Tγ</span>
+    <span class="n">lambda_n</span> <span class="o">=</span> <span class="p">(</span><span class="n">𝜏</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="mf">27.512</span><span class="o">*</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span><span class="o">+</span><span class="mf">36.492</span><span class="o">*</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span><span class="o">+</span><span class="mf">11.108</span><span class="o">*</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="mf">6.382</span><span class="o">*</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mf">0.565</span><span class="o">*</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">lambda_p</span> <span class="o">=</span> <span class="p">(</span><span class="n">𝜏</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="mf">27.617</span><span class="o">*</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span><span class="o">+</span><span class="mf">34.181</span><span class="o">*</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span><span class="o">+</span><span class="mf">18.059</span><span class="o">*</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="mf">16.229</span><span class="o">*</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mf">5.252</span><span class="o">*</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">q</span><span class="o">*</span><span class="n">Z</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">lambda_n</span><span class="p">,</span> <span class="n">lambda_p</span>
+
+
+<span class="c1">#p_an, n_an = WeakRateAnalytic(0.8617 * TPhoton/(kB * 1e1), 0.8617 * TNeutrino/(kB * 1e1))</span>
+<span class="c1">#p_an, n_an = WeakRateAnalytic(1e9 * TPhoton, 1e9 * TNeutrino)</span>
+
+
+<span class="c1">#n_app, p_app = WeakRateAnalytic(TPhoton)</span>
+
+<span class="c1">#plt.loglog(TPhoton, p_an)</span>
+<span class="c1">#plt.loglog(TPhoton, n_an)</span>
+
+<span class="c1">#plt.loglog(TPhoton, p_app)</span>
+<span class="c1">#plt.loglog(TPhoton, n_app)</span>
+<span class="c1">#plt.legend([&#39;p analytic&#39;, &#39;n analytic&#39;, &#39;p approx&#39;, &#39;n approx&#39;])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="strong-rates-and-differential-equation-structure">
+<h2>Strong Rates and Differential Equation Structure<a class="headerlink" href="#strong-rates-and-differential-equation-structure" title="Permalink to this headline">#</a></h2>
+<p>The strong reaction rates are composed using the reaction cross-section of each reaction, along with other constants. Furthermore, we have that in a generic four-body reaction, say</p>
+<div class="math notranslate nohighlight">
+\[Y_i + Y_j \underset{[kl]_{ij}}{\overset{[ij]_{kl}}{\rightleftharpoons}} Y_k + Y_l\]</div>
+<p>Where we have two species, <span class="math notranslate nohighlight">\(Y_i\)</span> and <span class="math notranslate nohighlight">\(Y_j\)</span> combining with a rate <span class="math notranslate nohighlight">\([ij]_{kl}\)</span> to produce the two species <span class="math notranslate nohighlight">\(Y_k\)</span> and <span class="math notranslate nohighlight">\(Y_l\)</span>. The reverse rate, <span class="math notranslate nohighlight">\([kl]_{ij}\)</span> is the rate at which <span class="math notranslate nohighlight">\(Y_k\)</span> and <span class="math notranslate nohighlight">\(Y_l\)</span> combine and produce <span class="math notranslate nohighlight">\(Y_i\)</span> and <span class="math notranslate nohighlight">\(Y_j\)</span>. We are interested in the forward and reverse rates for our reaction network. They can be computed and generally take the form</p>
+<div class="math notranslate nohighlight">
+\[[ij]_{kl} = \rho_b N_A \langle\sigma v\rangle_{jk}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\rho_b\)</span> is the baryon density, <span class="math notranslate nohighlight">\(N_A\)</span> is Avogadro’s number, and</p>
+<div class="math notranslate nohighlight">
+\[\langle \sigma v \rangle_{jk} = \int_0^\infty f(v, T) \sigma (v) v \, dv\]</div>
+<p>is the Boltzmann distribution over the two species and their reaction cross-section <span class="math notranslate nohighlight">\(\sigma(v)\)</span>.</p>
+<p>While this <em>can</em> be computed, these rates have already been computed by Fowler, Caughlan, and Zimmerman in their 1975 paper <em>Thermonuclear Reaction Rates II</em> or FCZII and in Wagoner 1967. We will use this instead. These rates are located in the file <code class="docutils literal notranslate"><span class="pre">rates.py</span></code>.</p>
+<p>We will consider reactions involving/creating protons, neutrons, Deuterium, Tritium, Helium-3, Helium-4, Lithium-6, Lithium-7, Beryllium-6, and Beryllium-7. While other elements are involved in BBN, these represent the vast majority of reactants by mass fraction. We will consider the following reactions:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+p + n \leftrightarrows {\rm{D}} + \gamma\\\end{split}\\\begin{split}p + {\rm{D}} \leftrightarrows {\rm^3He} + \gamma\\\end{split}\\\begin{split}n + {\rm{D}} \leftrightarrows {\rm{T}} + \gamma\\\end{split}\\\begin{split}n + {\rm{^3He}} \leftrightarrows p + {\rm{T}} \\\end{split}\\\begin{split}p + {\rm T} \leftrightarrows {\rm{^4He}} + \gamma \\\end{split}\\\begin{split}n + {\rm ^3He} \leftrightarrows {\rm{^4He}} + \gamma \\\end{split}\\\begin{split}{\rm D} + {\rm D} \leftrightarrows n + {\rm{^3He}} \\\end{split}\\\begin{split}{\rm D} + {\rm D} \leftrightarrows p + {\rm{T}} \\\end{split}\\\begin{split}{\rm D} + {\rm D} \leftrightarrows {\rm{^4He}} + \gamma \\\end{split}\\\begin{split}{\rm D} + {\rm  ^3He} \leftrightarrows {\rm{^4He}} + p \\\end{split}\\\begin{split}{\rm D} + {\rm  T} \leftrightarrows {\rm{^4He}} + n \\\end{split}\\\begin{split}{\rm ^3He} + {\rm  ^3He} \leftrightarrows {\rm{^4He}} + p + p \\\end{split}\\\begin{split}{\rm T} + {\rm  T} \leftrightarrows {\rm{^4He}} + n + n \\\end{split}\\\begin{split}{\rm ^3He} + {\rm  T} \leftrightarrows {\rm{^4He}} + p + n \\\end{split}\\\begin{split}{\rm ^3He} + {\rm  T} \leftrightarrows {\rm{^4He}} + {\rm D} \\\end{split}\\\begin{split}{\rm ^3He} + {\rm  ^4He} \leftrightarrows {\rm{^7Be}} + \gamma \\\end{split}\\\begin{split}{\rm T} + {\rm ^4He} \leftrightarrows {\rm{^7Li}} + \gamma \\\end{split}\\\begin{split}n + {\rm  ^7Be} \leftrightarrows p + {\rm{^7Li}} \\\end{split}\\\begin{split}p + {\rm  ^7Li} \leftrightarrows \rm{^4He} + {\rm{^4He}} \\
+\end{split}\end{aligned}\end{align} \]</div>
+<p>The reaction network can be constructed as follows</p>
+<div class="math notranslate nohighlight">
+\[\frac{dY_i}{dt} = \sum_{j,k,l}  N_i \left(\frac{Y_k^{N_k}Y_l^{N_l}}{N_k!N_l!} [kl]_{ij} - \frac{Y_i^{N_i}Y_j^{N_j}}{N_i!N_j!} [ij]_{kl}\right)\]</div>
+<p>Which allows us to create a coupled system of first-order non-linear ODEs. Thus, we can integrate with respect to time to obtain <span class="math notranslate nohighlight">\(Y_i\)</span> for each species <span class="math notranslate nohighlight">\(i\)</span> and determine its relative mass fraction. We set up the differential eqaution below and solve by the Radau method.</p>
+</section>
+<section id="nuclear-statistical-equilibrium-and-the-saha-equation">
+<h2>Nuclear Statistical Equilibrium and the Saha Equation<a class="headerlink" href="#nuclear-statistical-equilibrium-and-the-saha-equation" title="Permalink to this headline">#</a></h2>
+<p>In equilibrium (for a photon temperature of &gt;0.8 MeV or so), the number density of nuclear species is governed by the Saha equation. We can express the mass fraction of elements immediately before BBN begins by knowing only the binding energy and spin states of each nucleus along with the equilibrium mass fractions of protons and neutrons. This is because at high temperatures, <em>all</em> species are in equilibrium with protons and neutrons. In NSE, we can express the number density of nuclei of species <span class="math notranslate nohighlight">\(X\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[\frac{n_X}{n_n n_p} = \frac{m_{s,X}}{4} \left(\frac{2\pi m_X}{m_nm_p T}\right)^{3/2} e^{(m_n + m_p - m_X)/T}\]</div>
+<p>Where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(n_n\)</span>, <span class="math notranslate nohighlight">\(n_p\)</span>, <span class="math notranslate nohighlight">\(n_X\)</span> are the number densities of neutrons, protons, and species <span class="math notranslate nohighlight">\(X\)</span> respectively</p></li>
+<li><p><span class="math notranslate nohighlight">\(m_{s,X}\)</span> is the number of possible spin states of nucleus <span class="math notranslate nohighlight">\(X\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_n\)</span>, <span class="math notranslate nohighlight">\(m_p\)</span>, <span class="math notranslate nohighlight">\(m_X\)</span> are the masses of neutrons, protons, and species <span class="math notranslate nohighlight">\(X\)</span> and</p></li>
+<li><p>T is temperature in MeV</p></li>
+</ul>
+<p>This can be reexpressed as a more useful quantity for our case by expressing the number density of a species with respect to the number density of baryons overall. That rexpression, given in Dodelson and Schmidt’s <em>Modern Cosmology</em> (equation 4.16), is</p>
+<div class="math notranslate nohighlight">
+\[\frac{n_X}{n_b} \sim \eta_b \left(\frac{T}{m_n}\right)^{3/2} e^{B_X/T}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\eta_b\)</span> is the baryon to photon ratio and <span class="math notranslate nohighlight">\(B_X\)</span> is the binding energy of a nucleus of species <span class="math notranslate nohighlight">\(X\)</span>. This relation holds when <span class="math notranslate nohighlight">\(\eta_b\)</span> dominates the exponential term, and thus holds well for immediately pre-BBN temperatures, since they are not too high.</p>
+<p>From Kolb and Turner, we have that the NSE mass fraction of a species X can be expressed as (the somewhat unwieldy) expression:</p>
+<div class="math notranslate nohighlight">
+\[X_A = g_A \left(\zeta (3)^{A-1} \pi^{(1-A)/2} 2^{(3A-5)/2}\right) A^{5/2} \left(\frac{T}{m_p}\right)^{3(A-1)/2} \eta^{A-1} X_p^Z X_n^{A-Z} \exp(B_A/T)\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">NSEAbundances</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">Bind</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">gA</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    T - Temperature in MeV</span>
+<span class="sd">    Bind - Binding energy in MeV</span>
+<span class="sd">    A - Mass number of the atom</span>
+<span class="sd">    gA - </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+
+    <span class="n">coeff</span> <span class="o">=</span> <span class="n">gA</span> <span class="o">*</span> <span class="n">η0</span><span class="o">**</span><span class="p">(</span><span class="n">A</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">apery</span><span class="o">**</span><span class="p">(</span><span class="n">A</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">A</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">((</span><span class="mi">3</span><span class="o">*</span><span class="n">A</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)))</span> <span class="o">*</span> <span class="n">A</span><span class="o">**</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1">#XA = coeff * (T/(A*mn))**((3*(A-1))/2) * np.exp(Bind/T)</span>
+    <span class="n">XA</span> <span class="o">=</span> <span class="n">coeff</span> <span class="o">*</span> <span class="p">(</span><span class="n">T</span><span class="o">/</span><span class="n">mn</span><span class="p">)</span><span class="o">**</span><span class="p">((</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">Bind</span><span class="o">/</span><span class="n">T</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">XA</span>
+    
+    <span class="c1">#nXnb = η0 * (T/mp)**(3/2) * np.exp(Bind/T)</span>
+    <span class="c1">#return nXnb</span>
+    <span class="c1">#return 1/(1+(nXnb)**(-1))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">BBNEquation</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+
+    <span class="n">Yp</span><span class="p">,</span> <span class="n">Yn</span><span class="p">,</span> <span class="n">YD</span><span class="p">,</span> <span class="n">YT</span><span class="p">,</span> <span class="n">YHe3</span><span class="p">,</span> <span class="n">YHe4</span><span class="p">,</span> <span class="n">YBe7</span><span class="p">,</span> <span class="n">YLi7</span><span class="p">,</span> <span class="n">YB8</span><span class="p">,</span> <span class="n">YB10</span> <span class="o">=</span> <span class="n">Y</span>
+
+    <span class="c1">#YD = (1/2)*YD</span>
+    <span class="c1">#YT = (1/3)*YT</span>
+    <span class="c1">#YHe3 = (1/3)*YHe3</span>
+    <span class="c1">#YHe4 = (1/4)*YHe4</span>
+    <span class="c1">#YBe7 = (1/7)*YBe7</span>
+    <span class="c1">#YLi7=(1/7)*YLi7</span>
+    <span class="c1">#YB8 = (1/8)*YB8</span>
+    <span class="c1">#YB10 = (1/10)*YB10</span>
+    
+    <span class="n">T9</span> <span class="o">=</span> <span class="mf">10.4</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">z</span> <span class="o">=</span> <span class="mf">5.93</span><span class="o">/</span><span class="n">T9</span>
+    <span class="n">Tγ</span> <span class="o">=</span> <span class="n">T9</span>
+    
+    <span class="n">𝜌𝛾</span> <span class="o">=</span> <span class="mf">8.42</span><span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="mi">4</span>
+    <span class="n">𝜌e</span> <span class="o">=</span> <span class="mf">15.56</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">M</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">16</span> <span class="o">*</span> <span class="n">M</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">z</span><span class="p">))</span>
+    <span class="n">𝜌rad</span> <span class="o">=</span> <span class="n">𝜌𝛾</span> <span class="o">+</span> <span class="n">𝜌e</span>
+    <span class="n">p𝛾</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span> <span class="o">*</span> <span class="n">𝜌𝛾</span>
+    <span class="n">pe</span> <span class="o">=</span> <span class="mf">5.19</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">kbar</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">z</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">16</span> <span class="o">*</span> <span class="n">kbar</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">z</span><span class="p">))</span>
+    <span class="n">prad</span> <span class="o">=</span> <span class="n">p𝛾</span> <span class="o">+</span> <span class="n">pe</span>
+
+    <span class="n">T𝜈</span> <span class="o">=</span> <span class="p">(((</span><span class="mi">11</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">𝜌𝛾</span> <span class="o">+</span> <span class="n">p𝛾</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">𝜌rad</span> <span class="o">+</span> <span class="n">prad</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">T9</span>
+
+    <span class="c1"># Initialize the Weak Rates</span>
+
+    <span class="n">lambda_n</span><span class="p">,</span> <span class="n">lambda_p</span> <span class="o">=</span> <span class="n">weak_test</span><span class="p">(</span><span class="n">Tγ</span><span class="p">)</span>
+    <span class="c1">#lambda_p, lambda_p = WeakRateAnalytic(Tγ,Tν)</span>
+
+    <span class="n">ForwardRates</span><span class="p">,</span> <span class="n">ReverseRates</span><span class="p">,</span> <span class="n">rhob</span> <span class="o">=</span> <span class="n">StrongRates</span><span class="p">(</span><span class="n">Tγ</span><span class="p">)</span>
+    <span class="n">F</span> <span class="o">=</span> <span class="n">ForwardRates</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">ReverseRates</span>
+
+
+    <span class="c1"># This is a mess, need to procedurally generate matrix lol</span>
+
+
+    <span class="c1"># Forward Equations</span>
+
+    <span class="n">dYpF</span> <span class="o">=</span> <span class="o">-</span><span class="n">lambda_p</span><span class="o">*</span><span class="n">Yp</span> <span class="o">+</span> <span class="n">lambda_n</span><span class="o">*</span><span class="n">Yn</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">Yn</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YD</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YHe3</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YT</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">*</span><span class="n">YHe3</span>  <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YBe7</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">18</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YLi7</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">YT</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YBe7</span> <span class="o">-</span><span class="n">F</span><span class="p">[</span><span class="mi">21</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YB10</span>
+    <span class="n">dYnF</span> <span class="o">=</span> <span class="o">-</span><span class="n">lambda_n</span><span class="o">*</span><span class="n">Yn</span> <span class="o">+</span> <span class="n">lambda_p</span><span class="o">*</span><span class="n">Yp</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">Yn</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YD</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YHe3</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YHe3</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">*</span><span class="n">YT</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">YT</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YBe7</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">19</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YBe7</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span><span class="o">*</span><span class="n">YT</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">22</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YB10</span>
+    <span class="n">dYDF</span> <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">Yn</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YD</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YD</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">*</span><span class="n">YHe3</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">*</span><span class="n">YT</span>  <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">YT</span>
+    <span class="n">dYTF</span> <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YD</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YHe3</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YT</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">*</span><span class="n">YT</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">YT</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span><span class="o">*</span><span class="n">YT</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span><span class="o">*</span><span class="n">YT</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">YT</span>
+    <span class="n">dYHe3F</span> <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YD</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YHe3</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YHe3</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">*</span><span class="n">YHe3</span>  <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">YT</span><span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">YT</span>
+    <span class="n">dYHe4F</span> <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YT</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YHe3</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">*</span><span class="n">YHe3</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">*</span><span class="n">YT</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">**</span><span class="mi">2</span>  <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">YT</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span><span class="o">*</span><span class="n">YT</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">18</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YLi7</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">19</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YBe7</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span><span class="o">*</span><span class="n">YT</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">YT</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">21</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YB10</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">22</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YB10</span>
+    <span class="n">dYBe7F</span> <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YBe7</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">19</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YBe7</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YBe7</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">21</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YB10</span>
+    <span class="n">dYLi7F</span> <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span><span class="o">*</span><span class="n">YT</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YBe7</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">18</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YLi7</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">22</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YB10</span>
+    <span class="n">dYB8F</span> <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YBe7</span>
+    <span class="n">dYB10F</span> <span class="o">=</span> <span class="o">-</span><span class="n">F</span><span class="p">[</span><span class="mi">21</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YB10</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">22</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YB10</span>
+    <span class="c1"># Reverse Equations</span>
+
+    <span class="n">dYpR</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YT</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YT</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span><span class="o">*</span><span class="n">YLi7</span><span class="o">*</span><span class="n">Yp</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">18</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="o">*</span><span class="n">YB8</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">21</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">*</span><span class="n">YBe7</span>
+    <span class="n">dYnR</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">YT</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YT</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YHe3</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span><span class="o">*</span><span class="n">YLi7</span><span class="o">*</span><span class="n">Yp</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">19</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">22</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">*</span><span class="n">YLi7</span>
+    <span class="n">dYDR</span> <span class="o">=</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">YT</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YHe3</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YT</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span> <span class="n">R</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">*</span><span class="n">YHe4</span>
+    <span class="n">dYTR</span> <span class="o">=</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">YT</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YT</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YT</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span><span class="o">*</span><span class="n">YLi7</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YHe4</span>
+    <span class="n">dYHe3R</span> <span class="o">=</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YT</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YHe3</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YHe4</span>  <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span><span class="o">*</span><span class="n">YBe7</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YHe4</span>
+    <span class="n">dYHe4R</span> <span class="o">=</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">-</span><span class="n">R</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span><span class="o">*</span><span class="n">YBe7</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span><span class="o">*</span><span class="n">YLi7</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">18</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">19</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span><span class="o">*</span><span class="n">Yn</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">Yn</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">21</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">*</span><span class="n">YBe7</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">22</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">*</span><span class="n">YLi7</span>
+    <span class="n">dYBe7R</span> <span class="o">=</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span><span class="o">*</span><span class="n">YBe7</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span><span class="o">*</span><span class="n">YLi7</span><span class="o">*</span><span class="n">Yp</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">R</span><span class="p">[</span><span class="mi">19</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="o">*</span><span class="n">YB8</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">21</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">*</span><span class="n">YBe7</span>
+    <span class="n">dYLi7R</span> <span class="o">=</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span><span class="o">*</span><span class="n">YLi7</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span><span class="o">*</span><span class="n">YLi7</span><span class="o">*</span><span class="n">Yp</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">18</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">22</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">*</span><span class="n">YLi7</span>
+    <span class="n">dYB8R</span> <span class="o">=</span> <span class="o">-</span><span class="n">R</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="o">*</span><span class="n">YB8</span>
+    <span class="n">dYB10R</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="mi">21</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">*</span><span class="n">YBe7</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">22</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">*</span><span class="n">YLi7</span>
+    <span class="c1"># Sum total derivatives and return</span>
+
+    <span class="n">dYp</span> <span class="o">=</span> <span class="n">dYpF</span> <span class="o">+</span> <span class="n">dYpR</span>
+    <span class="n">dYn</span> <span class="o">=</span> <span class="n">dYnF</span> <span class="o">+</span> <span class="n">dYnR</span>
+    <span class="n">dYD</span> <span class="o">=</span> <span class="n">dYDF</span> <span class="o">+</span> <span class="n">dYDR</span>
+    <span class="n">dYT</span> <span class="o">=</span> <span class="n">dYTF</span> <span class="o">+</span> <span class="n">dYTR</span>
+    <span class="n">dYHe3</span> <span class="o">=</span> <span class="n">dYHe3F</span> <span class="o">+</span> <span class="n">dYHe3R</span>
+    <span class="n">dYHe4</span> <span class="o">=</span> <span class="n">dYHe4F</span> <span class="o">+</span> <span class="n">dYHe4R</span>
+    <span class="n">dYBe7</span> <span class="o">=</span> <span class="n">dYBe7F</span> <span class="o">+</span> <span class="n">dYBe7R</span>
+    <span class="n">dYLi7</span> <span class="o">=</span> <span class="n">dYLi7F</span> <span class="o">+</span> <span class="n">dYLi7R</span>
+    <span class="n">dYB8</span> <span class="o">=</span> <span class="n">dYB8F</span> <span class="o">+</span> <span class="n">dYB8R</span>
+    <span class="n">dYB10</span> <span class="o">=</span> <span class="n">dYB10F</span> <span class="o">+</span> <span class="n">dYB10R</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">dYp</span><span class="p">,</span> <span class="n">dYn</span><span class="p">,</span> <span class="n">dYD</span><span class="p">,</span> <span class="n">dYT</span><span class="p">,</span> <span class="n">dYHe3</span><span class="p">,</span> <span class="n">dYHe4</span><span class="p">,</span> <span class="n">dYBe7</span><span class="p">,</span> <span class="n">dYLi7</span><span class="p">,</span> <span class="n">dYB8</span><span class="p">,</span> <span class="n">dYB10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">BBNEquation1</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">Y</span><span class="p">):</span>
+    
+    <span class="n">Yp</span><span class="p">,</span> <span class="n">Yn</span><span class="p">,</span> <span class="n">YD</span><span class="p">,</span> <span class="n">YT</span><span class="p">,</span> <span class="n">YHe3</span><span class="p">,</span> <span class="n">YHe4</span><span class="p">,</span> <span class="n">YBe7</span><span class="p">,</span> <span class="n">YLi7</span> <span class="o">=</span> <span class="n">Y</span>
+    
+    <span class="n">T9</span> <span class="o">=</span> <span class="mf">10.4</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">z</span> <span class="o">=</span> <span class="mf">5.93</span><span class="o">/</span><span class="n">T9</span>
+    <span class="n">Tγ</span> <span class="o">=</span> <span class="n">T9</span>
+    
+    <span class="n">𝜌𝛾</span> <span class="o">=</span> <span class="mf">8.42</span><span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="mi">4</span>
+    <span class="n">𝜌e</span> <span class="o">=</span> <span class="mf">15.56</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">M</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">16</span> <span class="o">*</span> <span class="n">M</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">z</span><span class="p">))</span>
+    <span class="n">𝜌rad</span> <span class="o">=</span> <span class="n">𝜌𝛾</span> <span class="o">+</span> <span class="n">𝜌e</span>
+    <span class="n">p𝛾</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span> <span class="o">*</span> <span class="n">𝜌𝛾</span>
+    <span class="n">pe</span> <span class="o">=</span> <span class="mf">5.19</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">kbar</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">z</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">16</span> <span class="o">*</span> <span class="n">kbar</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">z</span><span class="p">))</span>
+    <span class="n">prad</span> <span class="o">=</span> <span class="n">p𝛾</span> <span class="o">+</span> <span class="n">pe</span>
+
+    <span class="n">T𝜈</span> <span class="o">=</span> <span class="p">(((</span><span class="mi">11</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">𝜌𝛾</span> <span class="o">+</span> <span class="n">p𝛾</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">𝜌rad</span> <span class="o">+</span> <span class="n">prad</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">T9</span>
+
+    <span class="c1"># Initialize the Weak Rates</span>
+
+    <span class="n">lambda_n</span><span class="p">,</span> <span class="n">lambda_p</span> <span class="o">=</span> <span class="n">weak_test</span><span class="p">(</span><span class="n">Tγ</span><span class="p">)</span>
+    <span class="n">ForwardRates</span><span class="p">,</span> <span class="n">ReverseRates</span> <span class="o">=</span> <span class="n">StrongRates</span><span class="p">(</span><span class="n">Tγ</span><span class="p">)</span>
+
+    <span class="n">ForwardRates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">lambda_n</span><span class="p">,</span> <span class="n">lambda_p</span><span class="p">],</span> <span class="n">ForwardRates</span><span class="p">)</span>
+
+    <span class="c1">#[ . . . ] [ . ] --&gt; Einsum ij, ij-&gt;j does:</span>
+    <span class="c1">#[ . A . ] [ Y ] --&gt; AY matrix multiplication, sum across rows of AY.</span>
+    <span class="c1">#[ . . . ] [ . ]</span>
+
+    
+
+    <span class="n">dYForwards</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;ij,ij-&gt;j&#39;</span><span class="p">,</span> <span class="n">ForwardRates</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+    <span class="n">dYReverse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;ij,ij-&gt;j&#39;</span><span class="p">,</span> <span class="n">ReverseRates</span><span class="p">,</span> <span class="o">-</span><span class="n">Y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ti</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">Tf</span> <span class="o">=</span> <span class="mf">0.116</span>
+<span class="n">Tγ</span><span class="p">,</span> <span class="n">T𝜈</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">Temperature</span><span class="p">(</span><span class="n">Ti</span><span class="p">,</span> <span class="n">Tf</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">ForwardRates</span><span class="p">,</span> <span class="n">ReverseRates</span><span class="p">,</span> <span class="n">rho</span> <span class="o">=</span> <span class="n">StrongRates</span><span class="p">(</span><span class="n">Tγ</span><span class="p">)</span>
+<span class="n">XDNSE0</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="n">NSEAbundances</span><span class="p">(</span><span class="n">Tγ</span><span class="o">*</span><span class="p">(</span><span class="n">kB</span><span class="o">*</span><span class="mf">1e9</span><span class="p">),</span> <span class="n">BD</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">XTNSE0</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span> <span class="o">*</span> <span class="n">NSEAbundances</span><span class="p">(</span><span class="n">Tγ</span><span class="o">*</span><span class="p">(</span><span class="n">kB</span><span class="o">*</span><span class="mf">1e9</span><span class="p">),</span> <span class="n">BT</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">X3NSE0</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span> <span class="o">*</span> <span class="n">NSEAbundances</span><span class="p">(</span><span class="n">Tγ</span><span class="o">*</span><span class="p">(</span><span class="n">kB</span><span class="o">*</span><span class="mf">1e9</span><span class="p">),</span> <span class="n">B3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">X4NSE0</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">16</span><span class="p">)</span> <span class="o">*</span> <span class="n">NSEAbundances</span><span class="p">(</span><span class="n">Tγ</span><span class="o">*</span><span class="p">(</span><span class="n">kB</span><span class="o">*</span><span class="mf">1e9</span><span class="p">),</span> <span class="n">B4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">Y0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">,)</span>
+<span class="n">Y0</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">Q</span><span class="o">/</span><span class="p">(</span><span class="n">Ti</span><span class="o">*</span><span class="p">(</span><span class="n">kB</span><span class="o">*</span><span class="mf">1e9</span><span class="p">)))</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Y0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">Y0</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">Y0</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">XDNSE0</span>
+<span class="n">Y0</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">XTNSE0</span>
+<span class="n">Y0</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">X3NSE0</span>
+<span class="n">Y0</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">X4NSE0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\murpf\AppData\Local\Temp/ipykernel_2760/1881963179.py:12: RuntimeWarning: overflow encountered in exp
+  XA = coeff * (T/mn)**((3*(A-1))/2) * np.exp(Bind/T)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">BBNEquation</span><span class="p">,</span> <span class="n">t</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="n">Y0</span><span class="p">,</span> <span class="n">t_eval</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;Radau&#39;</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">3e-28</span><span class="p">,</span> <span class="n">dense_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">XNNSE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">Q</span><span class="o">/</span><span class="p">(</span><span class="n">Tγ</span><span class="o">*</span><span class="p">(</span><span class="n">kB</span><span class="o">*</span><span class="mf">1e9</span><span class="p">))))</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">XPNSE</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">XNNSE</span>
+<span class="n">XDNSE</span> <span class="o">=</span> <span class="n">XPNSE</span><span class="o">*</span><span class="n">XNNSE</span> <span class="o">*</span> <span class="n">NSEAbundances</span><span class="p">(</span><span class="n">Tγ</span><span class="o">*</span><span class="p">(</span><span class="n">kB</span><span class="o">*</span><span class="mf">1e9</span><span class="p">),</span> <span class="n">BD</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">XTNSE</span> <span class="o">=</span> <span class="n">XPNSE</span><span class="o">*</span><span class="n">XNNSE</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">NSEAbundances</span><span class="p">(</span><span class="n">Tγ</span><span class="o">*</span><span class="p">(</span><span class="n">kB</span><span class="o">*</span><span class="mf">1e9</span><span class="p">),</span> <span class="n">BT</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">X3NSE</span> <span class="o">=</span> <span class="n">XPNSE</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">XNNSE</span> <span class="o">*</span> <span class="n">NSEAbundances</span><span class="p">(</span><span class="n">Tγ</span><span class="o">*</span><span class="p">(</span><span class="n">kB</span><span class="o">*</span><span class="mf">1e9</span><span class="p">),</span> <span class="n">B3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">X4NSE</span> <span class="o">=</span> <span class="n">XPNSE</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">XNNSE</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">NSEAbundances</span><span class="p">(</span><span class="n">Tγ</span><span class="o">*</span><span class="p">(</span><span class="n">kB</span><span class="o">*</span><span class="mf">1e9</span><span class="p">),</span> <span class="n">B4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\murpf\AppData\Local\Temp/ipykernel_2760/1881963179.py:12: RuntimeWarning: overflow encountered in exp
+  XA = coeff * (T/mn)**((3*(A-1))/2) * np.exp(Bind/T)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([(</span><span class="n">weights</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">Y</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)])</span>
+
+<span class="nb">print</span><span class="p">([</span><span class="n">Y</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">weights</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The final sum of the mass fractions is </span><span class="si">{</span><span class="n">total</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s1">0.3g</span><span class="si">}</span><span class="s1">%.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.7310166049170179, 7.886369513152676e-10, 5.268369182673063e-05, 2.463434756239296e-07, 3.032317812258462e-05, 0.26889461580193663, 3.6413714343511893e-10, 9.035094735946988e-11, 1.432319274874704e-18]
+The final sum of the mass fractions is 100%.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Initialize the figure and axis</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="c1">## RC Parameters</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;mathtext.fontset&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;custom&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;mathtext.rm&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;STIXGeneral&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;lines.linewidth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">3.3</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;STIXGeneral&#39;</span>
+<span class="c1">#colors = [&#39;darkblue&#39;, &#39;red&#39;, &#39;palevioletred&#39;, &#39;coral&#39;, &#39;mediumslateblue&#39;, &#39;darkolivegreen&#39;,&#39;darkturquoise&#39;, &#39;goldenrod&#39;, &#39;firebrick&#39;]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;#e31a1c&#39;</span><span class="p">,</span> <span class="s1">&#39;cornflowerblue&#39;</span><span class="p">,</span> <span class="s1">&#39;sienna&#39;</span><span class="p">,</span> <span class="s1">&#39;#33a02c&#39;</span><span class="p">,</span> <span class="s1">&#39;blueviolet&#39;</span><span class="p">,</span> <span class="s1">&#39;mediumvioletred&#39;</span><span class="p">,</span> <span class="s1">&#39;#ff7f00&#39;</span><span class="p">,</span> <span class="s1">&#39;#cab2d6&#39;</span><span class="p">]</span>
+<span class="c1">## Plot</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">Tγ</span><span class="p">,</span> <span class="n">weights</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">Y</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">]),</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">Tγ</span><span class="p">,</span> <span class="n">weights</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="n">Y</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">9</span><span class="p">])</span>
+<span class="c1">#ax.loglog(Tγ,rho, linestyle=&#39;dotted&#39;, color=&#39;k&#39;)</span>
+<span class="c1">## Legend</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="sa">r</span><span class="s1">&#39;$\rm p \, (H)$&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\rm D \, (^2 H)$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\rm T \, (^3 H)$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\rm ^3He$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\rm Y_p \, (^4 He)$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\rm ^7Be$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\rm ^7Li$&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$\rm ^</span><span class="si">{10}</span><span class="s1">B$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\rm \rho_b$&#39;</span><span class="p">]</span>
+
+
+<span class="n">box</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_position</span><span class="p">([</span><span class="n">box</span><span class="o">.</span><span class="n">x0</span><span class="p">,</span> <span class="n">box</span><span class="o">.</span><span class="n">y0</span><span class="p">,</span> <span class="n">box</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">box</span><span class="o">.</span><span class="n">height</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="c1">## Tick and Ruling Parameters</span>
+<span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="n">LogFormatterSciNotation</span><span class="p">,</span> <span class="n">LogLocator</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">Ti</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">Tf</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">1e-27</span><span class="p">,</span><span class="mf">2e0</span><span class="p">)</span>
+
+
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">1.15</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">36</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">LogLocator</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">LogLocator</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_minor_formatter</span><span class="p">(</span><span class="n">LogFormatterSciNotation</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_minor_formatter</span><span class="p">(</span><span class="n">LogFormatterSciNotation</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">minorticks_on</span><span class="p">()</span>
+
+<span class="c1">## Labels</span>
+
+<span class="c1">#ax.set_title(&#39;Mass Fraction of Elements in BBN&#39;)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Mass Fraction&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">36</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Temperature ($\rm{10^9 K}$)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">36</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;BBNTestContrast7.pdf&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;pdf&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/writeuptest_18_0.png" src="_images/writeuptest_18_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># to create a second axis on top with time t:</span>
+<span class="c1"># functions going both ways based on arrays of t and T</span>
+<span class="k">def</span> <span class="nf">t_from_T</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="c1"># fix for fact that T is decreasing! </span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">T</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">t</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">left</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
+<span class="k">def</span> <span class="nf">T_from_t</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="c1"># left and right are key to removing unwanted characters</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># then, later in the code, you will want ( I didn&#39;t use the commented lines)</span>
+<span class="n">secondaxis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">secondary_xaxis</span><span class="p">(</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">functions</span><span class="o">=</span><span class="p">(</span><span class="n">t_from_T</span><span class="p">,</span> <span class="n">T_from_t</span><span class="p">))</span>
+<span class="n">secondaxis</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$t$ (seconds)&#39;</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1">#secondaxis.set_xticklabels([&#39;10**(-6)&#39;])</span>
+<span class="c1">#secondaxis.set_xticks(np.logspace(-9, 3, 13))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;$t$ (seconds)&#39;)
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">c:\Users\murpf\anaconda3\lib\site-packages\IPython\core\formatters.py</span> in <span class="ni">__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span>                 <span class="k">pass</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span>             <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">341</span>                 <span class="k">return</span> <span class="n">printer</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>             <span class="c1"># Finally look for special method names</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span>             <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+
+<span class="nn">c:\Users\murpf\anaconda3\lib\site-packages\IPython\core\pylabtools.py</span> in <span class="ni">print_figure</span><span class="nt">(fig, fmt, bbox_inches, base64, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">149</span>         <span class="n">FigureCanvasBase</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span> 
+<span class="ne">--&gt; </span><span class="mi">151</span>     <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">print_figure</span><span class="p">(</span><span class="n">bytes_io</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">bytes_io</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">153</span>     <span class="k">if</span> <span class="n">fmt</span> <span class="o">==</span> <span class="s1">&#39;svg&#39;</span><span class="p">:</span>
+
+<span class="nn">c:\Users\murpf\anaconda3\lib\site-packages\matplotlib\backend_bases.py</span> in <span class="ni">print_figure</span><span class="nt">(self, filename, dpi, facecolor, edgecolor, orientation, format, bbox_inches, pad_inches, bbox_extra_artists, backend, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2288</span>                 <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2289</span>                 <span class="k">with</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">renderer</span><span class="p">,</span> <span class="s2">&quot;_draw_disabled&quot;</span><span class="p">,</span> <span class="n">nullcontext</span><span class="p">)():</span>
+<span class="ne">-&gt; </span><span class="mi">2290</span>                     <span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2291</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2292</span>             <span class="k">if</span> <span class="n">bbox_inches</span><span class="p">:</span>
+
+<span class="nn">c:\Users\murpf\anaconda3\lib\site-packages\matplotlib\artist.py</span> in <span class="ni">draw_wrapper</span><span class="nt">(artist, renderer, *args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span>     <span class="nd">@wraps</span><span class="p">(</span><span class="n">draw</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="k">def</span> <span class="nf">draw_wrapper</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">73</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span>         <span class="k">if</span> <span class="n">renderer</span><span class="o">.</span><span class="n">_rasterizing</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span>             <span class="n">renderer</span><span class="o">.</span><span class="n">stop_rasterizing</span><span class="p">()</span>
+
+<span class="nn">c:\Users\murpf\anaconda3\lib\site-packages\matplotlib\artist.py</span> in <span class="ni">draw_wrapper</span><span class="nt">(artist, renderer)</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span>                 <span class="n">renderer</span><span class="o">.</span><span class="n">start_filter</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span> 
+<span class="ne">---&gt; </span><span class="mi">50</span>             <span class="k">return</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span>         <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span>             <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">c:\Users\murpf\anaconda3\lib\site-packages\matplotlib\figure.py</span> in <span class="ni">draw</span><span class="nt">(self, renderer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2787</span>             <span class="k">return</span>
+<span class="g g-Whitespace">   </span><span class="mi">2788</span> 
+<span class="ne">-&gt; </span><span class="mi">2789</span>         <span class="n">artists</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_draw_artists</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2790</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2791</span>         <span class="k">try</span><span class="p">:</span>
+
+<span class="nn">c:\Users\murpf\anaconda3\lib\site-packages\matplotlib\figure.py</span> in <span class="ni">_get_draw_artists</span><span class="nt">(self, renderer)</span>
+<span class="g g-Whitespace">    </span><span class="mi">243</span>                     <span class="k">if</span> <span class="n">locator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">244</span>                         <span class="n">pos</span> <span class="o">=</span> <span class="n">locator</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">renderer</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">245</span>                         <span class="n">child</span><span class="o">.</span><span class="n">apply_aspect</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">246</span>                     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">247</span>                         <span class="n">child</span><span class="o">.</span><span class="n">apply_aspect</span><span class="p">()</span>
+
+<span class="nn">c:\Users\murpf\anaconda3\lib\site-packages\matplotlib\axes\_secondary_axes.py</span> in <span class="ni">apply_aspect</span><span class="nt">(self, position)</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span>     <span class="k">def</span> <span class="nf">apply_aspect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">123</span>         <span class="c1"># docstring inherited.</span>
+<span class="ne">--&gt; </span><span class="mi">124</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_set_lims</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">apply_aspect</span><span class="p">(</span><span class="n">position</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">126</span> 
+
+<span class="nn">c:\Users\murpf\anaconda3\lib\site-packages\matplotlib\axes\_secondary_axes.py</span> in <span class="ni">_set_lims</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">224</span>             <span class="n">set_lim</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_ylim</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span>         <span class="n">order</span> <span class="o">=</span> <span class="n">lims</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">lims</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="ne">--&gt; </span><span class="mi">226</span>         <span class="n">lims</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_functions</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lims</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">227</span>         <span class="n">neworder</span> <span class="o">=</span> <span class="n">lims</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">lims</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span>         <span class="k">if</span> <span class="n">neworder</span> <span class="o">!=</span> <span class="n">order</span><span class="p">:</span>
+
+<span class="nn">~\AppData\Local\Temp/ipykernel_2760/534751155.py</span> in <span class="ni">t_from_T</span><span class="nt">(x)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">t_from_T</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="c1"># fix for fact that T is decreasing!</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">T</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">t</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">left</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">def</span> <span class="nf">T_from_t</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="c1"># left and right are key to removing unwanted characters</span>
+
+<span class="ne">NameError</span>: name &#39;T&#39; is not defined
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 1 Axes&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Aidan Meador-Woodruff<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
