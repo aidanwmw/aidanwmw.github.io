@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Thermodynamics and Expansion, en bref &#8212; iPyBBN - An Interactive Overview of Big Bang Nucleosynthesis</title>
+    <title>Thermodynamics and Groundwork &#8212; iPyBBN - An Interactive Overview of Big Bang Nucleosynthesis</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
-    <link rel="prev" title="Markdown Files" href="markdown.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -110,25 +108,20 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                <a class="reference internal" href="equilibrium_statphys.html">
+                    Statistical Equilibrium Physics
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="markdown.html">
-   Markdown Files
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Thermodynamics and Expansion, en bref
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="markdown-notebooks.html">
-   Notebooks with MyST Markdown
+  <a class="reference internal" href="packages.html">
+   A note on packages
   </a>
  </li>
 </ul>
@@ -315,23 +308,142 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#friedmann-equation-and-energy-densities">
+   Friedmann Equation and Energy Densities
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expansion-and-the-uncertainty-of-omega-b-h-2">
+   Expansion and the Uncertainty of
+   <span class="math notranslate nohighlight">
+    \(\Omega_B h^2\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#equilibruim-conditions">
+   Equilibruim Conditions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#neutrino-decoupling">
+   Neutrino Decoupling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#radiation-dominated-era">
+   Radiation-Dominated Era
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#friedmann-equations-and-modification">
+   Friedmann Equations and Modification
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-uncertainty-of-omega">
+   The Uncertainty of
+   <span class="math notranslate nohighlight">
+    \(\Omega\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#temperature-time-relation">
+   Temperature-Time Relation
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Thermodynamics and Expansion, en bref</h1>
+                <h1>Thermodynamics and Groundwork</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#friedmann-equation-and-energy-densities">
+   Friedmann Equation and Energy Densities
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expansion-and-the-uncertainty-of-omega-b-h-2">
+   Expansion and the Uncertainty of
+   <span class="math notranslate nohighlight">
+    \(\Omega_B h^2\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#equilibruim-conditions">
+   Equilibruim Conditions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#neutrino-decoupling">
+   Neutrino Decoupling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#radiation-dominated-era">
+   Radiation-Dominated Era
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#friedmann-equations-and-modification">
+   Friedmann Equations and Modification
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-uncertainty-of-omega">
+   The Uncertainty of
+   <span class="math notranslate nohighlight">
+    \(\Omega\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#temperature-time-relation">
+   Temperature-Time Relation
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -339,9 +451,17 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="thermodynamics-and-expansion-en-bref">
-<h1>Thermodynamics and Expansion, en bref<a class="headerlink" href="#thermodynamics-and-expansion-en-bref" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="thermodynamics-and-groundwork">
+<h1>Thermodynamics and Groundwork<a class="headerlink" href="#thermodynamics-and-groundwork" title="Permalink to this headline">#</a></h1>
 <p>In the beginning, the universe began to expand. It decided, for some reason or another, to decrease temperature in doing so. This, unfortunately, was the advent of the physical field known as <em>thermodynamics</em>.</p>
+<section id="friedmann-equation-and-energy-densities">
+<h2>Friedmann Equation and Energy Densities<a class="headerlink" href="#friedmann-equation-and-energy-densities" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="expansion-and-the-uncertainty-of-omega-b-h-2">
+<h2>Expansion and the Uncertainty of <span class="math notranslate nohighlight">\(\Omega_B h^2\)</span><a class="headerlink" href="#expansion-and-the-uncertainty-of-omega-b-h-2" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="equilibruim-conditions">
+<h2>Equilibruim Conditions<a class="headerlink" href="#equilibruim-conditions" title="Permalink to this headline">#</a></h2>
 <p>If we think of BBN as a house, thermodynamics is the foundation. Despite its… lackluster reputation, thermodynamics motivates and governs all of nucleosynthesis at every step of the way. We therefore will begin with a brief discussion on the thermodynamics of the early universe. We will build BBN from the ground up.</p>
 <ol class="simple">
 <li><p>The expansion of the universe</p></li>
@@ -350,8 +470,31 @@ title="Print to PDF"
 <p>Both of these principles can be expressed by using the Friedmann equations.</p>
 <p>The Friedmann equations express the expansion of the universe by relating the derivative of the rate of expansion (scale factor) to itself. In doing so, we can recover time and teperature with ample modification of the equations.</p>
 <div class="math notranslate nohighlight" id="equation-friedmann">
-<span class="eqno">(1)<a class="headerlink" href="#equation-friedmann" title="Permalink to this equation">#</a></span>\[\frac{\ddot{a}}{a} = -\frac{4\pi G}{3} \left(\rho + \frac{3p}{c^2}\right)\]</div>
-<p>see the expansion eq <a class="reference internal" href="#equation-friedmann">(1)</a></p>
+<span class="eqno">()<a class="headerlink" href="#equation-friedmann" title="Permalink to this equation">#</a></span>\[\frac{\ddot{a}}{a} = -\frac{4\pi G}{3} \left(\rho + \frac{3p}{c^2}\right)\]</div>
+<p>see the expansion eq <a class="reference internal" href="#equation-friedmann">()</a></p>
+</section>
+<section id="neutrino-decoupling">
+<h2>Neutrino Decoupling<a class="headerlink" href="#neutrino-decoupling" title="Permalink to this headline">#</a></h2>
+<p>As the universe cooled and the universe expanded, the interaction rate of neutrinos was eventually too slow to maintain thermal equilibrium and they ceased to significantly react with other forms of matter. This decoupling is of crucial importance for determining the scale factor, as it changes the energy density of the radiation bath of the early universe.</p>
+</section>
+<section id="radiation-dominated-era">
+<h2>Radiation-Dominated Era<a class="headerlink" href="#radiation-dominated-era" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="friedmann-equations-and-modification">
+<h2>Friedmann Equations and Modification<a class="headerlink" href="#friedmann-equations-and-modification" title="Permalink to this headline">#</a></h2>
+<p>We assume a basic Friedmann universe (<span class="math notranslate nohighlight">\(\Lambda = 0\)</span>), but it can easily be considered.</p>
+</section>
+<section id="the-uncertainty-of-omega">
+<h2>The Uncertainty of <span class="math notranslate nohighlight">\(\Omega\)</span><a class="headerlink" href="#the-uncertainty-of-omega" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="temperature-time-relation">
+<h2>Temperature-Time Relation<a class="headerlink" href="#temperature-time-relation" title="Permalink to this headline">#</a></h2>
+<p>We obtain</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We integrate starting at the time 0. We note that this does NOT mean that the big bang starts at the beginning of our simulation! It is an arbitrary starting point. In reality, it makes little difference, as decoupling happens within a second of the big bang.</p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -381,20 +524,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="markdown.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Markdown Files</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="markdown-notebooks.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Notebooks with MyST Markdown</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
