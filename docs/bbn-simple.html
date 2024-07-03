@@ -1,0 +1,1275 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>BBN-simple: a code for simplified and pedagogical Big Bang Nucleosynthesis &#8212; BBN-Simple</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'bbn-simple';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">BBN-Simple</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    BBN-simple: a code for simplified and pedagogical Big Bang Nucleosynthesis
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fbbn-simple.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/bbn-simple.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>BBN-simple: a code for simplified and pedagogical Big Bang Nucleosynthesis</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section-0-constants-functions-and-import-statements-typical-pythonic-things">Section 0: Constants, Functions, and Import Statements: Typical Pythonic Things</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section-1-thermodynamics-and-the-time-temperature-relationship">Section 1: Thermodynamics and the Time-Temperature Relationship</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#friedmann-equations">Friedmann Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-temperature-relationships">Time-Temperature Relationships</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-the-weak-rates-and-nuclear-statistical-equilibrium">Section 2: The Weak Rates and Nuclear Statistical Equilibrium</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-3-the-strong-rates-and-the-reaction-network">Section 3: The Strong Rates and The Reaction Network</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="bbn-simple-a-code-for-simplified-and-pedagogical-big-bang-nucleosynthesis">
+<h1>BBN-simple: a code for simplified and pedagogical Big Bang Nucleosynthesis<a class="headerlink" href="#bbn-simple-a-code-for-simplified-and-pedagogical-big-bang-nucleosynthesis" title="Link to this heading">#</a></h1>
+<p>This code is a pedagogical approach to light-element Big Bang Nucleosynthesis (BBN) stripped to its simplest physics. It is aimed at an advanced undergraduate or precandidate interested in the most fundamental necessary physics to consider the problem of BBN.</p>
+<p>This code and its associated publication were written by Aidan Meador-Woodruff and Dragan Huterer of the University of Michigan in the Lienweber Center for Theoretical Physics. Our emails are <a class="reference external" href="mailto:aidanmw&#37;&#52;&#48;umich&#46;edu">aidanmw<span>&#64;</span>umich<span>&#46;</span>edu</a> and <a class="reference external" href="mailto:huterer&#37;&#52;&#48;umich&#46;edu">huterer<span>&#64;</span>umich<span>&#46;</span>edu</a>, respectively.</p>
+<section id="section-0-constants-functions-and-import-statements-typical-pythonic-things">
+<h2>Section 0: Constants, Functions, and Import Statements: Typical Pythonic Things<a class="headerlink" href="#section-0-constants-functions-and-import-statements-typical-pythonic-things" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### IMPORT STATEMENTS ###</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">interpolate</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1"># ----------------------------------- #</span>
+<span class="c1">### CONSTANTS ###</span>
+
+<span class="c1">## Numbers ##</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">apery</span> <span class="o">=</span> <span class="n">zeta</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1">## Masses ##</span>
+<span class="n">me</span> <span class="o">=</span> <span class="mf">0.510998</span> <span class="c1"># Mass of electron in [MeV/c^2]</span>
+<span class="n">mp</span> <span class="o">=</span> <span class="mf">938.272013</span> <span class="c1"># Mass of proton in [MeV/c^2]</span>
+<span class="n">mn</span> <span class="o">=</span> <span class="mf">939.565346</span> <span class="c1"># Mass of neutron in [MeV/c^2]</span>
+<span class="n">md</span> <span class="o">=</span> <span class="mf">1875.612793</span> <span class="c1"># Mass of Deuterium in [MeV/c^2]</span>
+<span class="n">mt</span> <span class="o">=</span> <span class="mf">2808.920906</span> <span class="c1"># Mass of Tritium in [MeV/c^2]</span>
+<span class="n">m3</span> <span class="o">=</span> <span class="mf">2808.391383</span> <span class="c1"># Mass of Helium-3 in [MeV/c^2]</span>
+<span class="n">m4</span> <span class="o">=</span> <span class="mf">3727.379109</span> <span class="c1"># Mass of Helium-4 (Alpha) in [MeV/c^2]</span>
+<span class="n">mli6</span> <span class="o">=</span> <span class="mf">5603.05141</span> <span class="c1"># Mass of Lithium-6 in [MeV/c^2]</span>
+<span class="n">mli7</span> <span class="o">=</span> <span class="mf">6533.833166</span> <span class="c1"># Mass of Lithium-7 in [MeV/c^2]</span>
+<span class="n">mbe7</span> <span class="o">=</span> <span class="mf">6534.184060</span> <span class="c1"># Mass of Beryllium-7 in [MeV/c^2]</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="mf">939.5654133</span> <span class="o">-</span> <span class="mf">938.2720813</span> <span class="c1"># Proton-Neutron Mass Difference in [MeV/c^2]</span>
+<span class="n">amu</span> <span class="o">=</span> <span class="mf">931.494003</span> <span class="c1"># AMU in MeV</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">Q</span><span class="o">/</span><span class="n">me</span> <span class="c1"># Exponential NSE Mass ratio [unitless]</span>
+
+<span class="c1">## Energies ##</span>
+<span class="n">Bd</span> <span class="o">=</span> <span class="mf">2.224</span> <span class="c1"># Binding Energy of Deuterium in [MeV]</span>
+<span class="n">Bt</span> <span class="o">=</span> <span class="mf">8.50</span> <span class="c1"># Binding Energy of Tritium in [MeV]</span>
+<span class="n">B3</span> <span class="o">=</span> <span class="mf">7.718</span> <span class="c1"># Binding Energy of Helium-3 in [MeV]</span>
+<span class="n">B4</span> <span class="o">=</span> <span class="mf">28.295</span> <span class="c1"># Binding Energy of Helium-4 (Alpha) in [MeV]</span>
+<span class="n">Bli7</span> <span class="o">=</span> <span class="mf">39.2</span> <span class="c1"># Binding Energy of Lithum-7 in [MeV]</span>
+<span class="n">Bbe7</span><span class="o">=</span><span class="mf">37.6</span> <span class="c1"># Binding Energy of Beryllium-7 in [MeV]</span>
+
+<span class="c1">## General Physical Units ##</span>
+<span class="n">G</span> <span class="o">=</span> <span class="mf">6.67e-45</span> <span class="c1"># Gravitational Constant [] </span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">2.99e10</span> <span class="c1"># Speed of Light [cm/s]</span>
+<span class="n">kB</span> <span class="o">=</span> <span class="mf">8.617e-11</span> <span class="c1"># Boltzmann Constant [MeV/Kelvin]</span>
+<span class="n">hbar</span> <span class="o">=</span> <span class="mf">6.582e-22</span> <span class="c1"># Reduced Planck constant h/2pi [MeV s]</span>
+<span class="n">NA</span> <span class="o">=</span> <span class="mf">6.022e23</span> <span class="c1"># Avogadro&#39;s number [# molecules/mole]</span>
+
+<span class="c1">## Particle Physics Units ##</span>
+<span class="n">gA</span> <span class="o">=</span> <span class="mf">1.26</span> <span class="c1"># Axial vector corretion for weak charge nucleon rxns between p and n. [scalar]</span>
+<span class="n">GF</span> <span class="o">=</span> <span class="mf">1.1663787e-5</span><span class="o">*</span><span class="mf">1e-6</span> <span class="c1"># Fermi coupling constant in [MeV^-2]</span>
+<span class="n">RadConst</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">15</span> <span class="c1"># Radiation constant for Radiation pressures [unitless]</span>
+
+<span class="c1">## Free Parameters ##</span>
+<span class="n">N𝜈</span> <span class="o">=</span> <span class="mf">3.046</span> <span class="c1"># Number of neutrino flavors [unitless]</span>
+<span class="n">taun</span> <span class="o">=</span> <span class="mf">880.20</span> <span class="c1"># Average lifetime of a neutron before decay [s]</span>
+<span class="n">η0</span> <span class="o">=</span> <span class="mf">6.12e-10</span> <span class="c1">#1.2e-9 # The present day ratio of baryons to photons [unitless, number density]</span>
+
+<span class="c1"># ----------------------------------- #</span>
+<span class="c1">### USEFUL CONVERSIONS ###</span>
+<span class="k">def</span> <span class="nf">K9toMeV</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+    <span class="s1">&#39;Converts T9 to T in MeV.&#39;</span>
+    
+    <span class="n">K</span> <span class="o">=</span> <span class="mf">8.619e-5</span> <span class="c1"># 1 Kelvin to eV/kB</span>
+    <span class="n">K9</span> <span class="o">=</span> <span class="n">K</span><span class="o">*</span><span class="mf">1e9</span> <span class="c1"># 10^9 Kelvin in eV/kB</span>
+    <span class="n">MeV</span> <span class="o">=</span> <span class="n">K9</span><span class="o">/</span><span class="mf">1e6</span> <span class="c1"># 10^9 Kelvin in MeV/kB</span>
+    <span class="k">return</span> <span class="n">MeV</span><span class="o">*</span><span class="n">T</span>
+
+<span class="k">def</span> <span class="nf">MeVtoK9</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+    <span class="s1">&#39;Converts T in MeV to T9&#39;</span>
+    <span class="n">eV</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mf">8.619e-5</span><span class="p">)</span> <span class="c1"># 1 eV/kB to Kelvin</span>
+    <span class="n">MeV</span> <span class="o">=</span> <span class="n">eV</span><span class="o">*</span><span class="mf">1e6</span> <span class="c1"># Converting MeV to eV/kB</span>
+    <span class="n">K9</span> <span class="o">=</span> <span class="n">MeV</span><span class="o">/</span><span class="mf">1e9</span> <span class="c1"># Converting Kelvin to 10^9 Kelvin</span>
+    <span class="k">return</span> <span class="n">K9</span><span class="o">*</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-1-thermodynamics-and-the-time-temperature-relationship">
+<h2>Section 1: Thermodynamics and the Time-Temperature Relationship<a class="headerlink" href="#section-1-thermodynamics-and-the-time-temperature-relationship" title="Link to this heading">#</a></h2>
+<p>To begin with BBN, we must lay the groundwork of thermodynamics in the early universe. In our cake analogy, this is the equivalent of creating our oven and preheating it to the appropriate temperature. The evolution of photon and neutrino temperature with resepct to time are driven by the expansion of space after the Big Bang. The expansion of space and its thermodynamic consequences are the primary driver of BBN.</p>
+<p>To relate the evolution of time after the Big Bang and the temperature of radiation, we must use the Friedmann equations. We will use the fiducial values for a Flat, <span class="math notranslate nohighlight">\(\Lambda\)</span> CDM universe in this notebook. We will assume a basic understanding of cosmology, at least to the degree of Kolb &amp; Turner’s <em>The Early Universe</em> (1994) or Ryden’s <em>Introduction to Cosmology</em> (2016).</p>
+</section>
+<section id="friedmann-equations">
+<h2>Friedmann Equations<a class="headerlink" href="#friedmann-equations" title="Link to this heading">#</a></h2>
+<p>There are two independent Friedmann equations. They are, (for zero curvature):</p>
+<div class="math notranslate nohighlight">
+\[H^2 \equiv \left(\frac{\dot a}{a}\right)^2 = \frac{8\pi G}{3}\rho_{\rm tot} \tag{1}\]</div>
+<p>and
+$<span class="math notranslate nohighlight">\(\frac{\ddot a}{a} = - \frac{4\pi G}{3} (\rho + 3P) \tag{2}\)</span>$</p>
+<p>Where <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(\rho\)</span>, and <span class="math notranslate nohighlight">\(P\)</span> are the scale factor, energy densities, and radiation pressure, respectively. A third crucially important equation is the so-called continuity equation, which lets us calculate the time derivatives of energy densities. It is</p>
+<div class="math notranslate nohighlight">
+\[\dot \rho + 3H(\rho + P) = 0 \tag{3}\]</div>
+<p>By use of the First Law of Thermodynamics and the thermodynamic integrability condition, we arrive at the equivalent equation</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial P}{\partial T} = \frac{\rho + P}{T} \tag{4}\]</div>
+<p>Which is explained from fundamentals in K&amp;T and is equivalent to Equation 3.67. With these equations in hand, we have the basis to derive the time-temperature relationships.</p>
+</section>
+<section id="time-temperature-relationships">
+<h2>Time-Temperature Relationships<a class="headerlink" href="#time-temperature-relationships" title="Link to this heading">#</a></h2>
+<p>From Table 1 in Wagoner, Fowler, and Hoyle’s 1967 <em>Synthesis of Elements</em>, the Freidmann equations can be used to express the following differential relationship between temperature of photons and time</p>
+<div class="math notranslate nohighlight">
+\[\frac{dT}{dt} = \frac{d\rho}{dt} \cdot \frac{dT}{d\rho} = 3H(\rho + P) \cdot \frac{dT}{d\rho} = (24 \pi G \rho)^{1/2} \left(\rho_{\rm rad} + p_{\rm rad}\right) \left( \frac{d\rho_{\rm rad}}{dT}\right)^{-1}\]</div>
+<p>Which they show can be integrated (from <span class="math notranslate nohighlight">\(t=0\)</span> and <span class="math notranslate nohighlight">\(T = \infty\)</span>) to give the necessary relationship</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}T = (12 \pi G \sigma)^{1/4}t^{-1/2}\end{equation}\]</div>
+<p>A common way to express the temperature of photons in the early universe is in units of <span class="math notranslate nohighlight">\(10^9 ~ {\mathrm{K}}\)</span>. Temperature in these units is usually denoted as <span class="math notranslate nohighlight">\(T_9\)</span>. This equation is in units of <span class="math notranslate nohighlight">\(\mathrm{\frac{MeV}{k_{B}}}\)</span>. However, these units can be converted to Kelvin and thus this can be expressed as the approximation</p>
+<div class="math notranslate nohighlight">
+\[T_9 \simeq 10.4 t^{-1/2} \tag{7}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ELECTRON/POSITRON AND PHOTON TEMPERATURES ####</span>
+
+<span class="c1">## Initial and final temperatures ##</span>
+<span class="n">Ti</span> <span class="o">=</span> <span class="mf">1e2</span>
+<span class="n">Tf</span> <span class="o">=</span> <span class="mf">1e-3</span>
+<span class="n">n</span> <span class="o">=</span>  <span class="mi">1000</span>
+
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">geomspace</span><span class="p">(</span><span class="n">Ti</span><span class="p">,</span><span class="n">Tf</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="n">T9</span> <span class="o">=</span> <span class="n">MeVtoK9</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+<span class="n">T9i</span> <span class="o">=</span> <span class="n">MeVtoK9</span><span class="p">(</span><span class="n">Ti</span><span class="p">)</span>
+<span class="n">T9f</span> <span class="o">=</span> <span class="n">MeVtoK9</span><span class="p">(</span><span class="n">Tf</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">ElectronPositron</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Solves for the electron and positron energy density and pressure, 𝜌e and Pe, as a function of temperature. </span>
+<span class="sd">    INPUT :</span>
+<span class="sd">    Tγ in MeV [1xn ndarray]</span>
+<span class="sd">    </span>
+<span class="sd">    OUTPUTS : </span>
+<span class="sd">    𝜌e [1xn ndarray]</span>
+<span class="sd">    Pe [1xn ndarray]</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="mi">128</span>
+    <span class="n">points</span><span class="p">,</span> <span class="n">weights</span> <span class="o">=</span> <span class="n">roots_laguerre</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    
+    <span class="n">y</span> <span class="o">=</span> <span class="n">points</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">me</span><span class="o">/</span><span class="n">T</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="n">rhoe_numerator</span> <span class="o">=</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">dist</span>
+    <span class="n">rhoe_denominator</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">rhoe_integrand</span> <span class="o">=</span> <span class="n">rhoe_numerator</span><span class="o">/</span><span class="n">rhoe_denominator</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="c1"># Have to reweight for GL quadrature.</span>
+    <span class="n">rhoe_integral</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">rhoe_integrand</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span> <span class="c1"># Approximates the integral by a finite sum in quadrature.</span>
+    <span class="n">rhoe</span> <span class="o">=</span> <span class="n">T</span><span class="o">**</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">rhoe_integral</span> <span class="c1"># Full expression with coefficient</span>
+
+    <span class="n">Pe_numerator</span> <span class="o">=</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">Pe_denominator</span> <span class="o">=</span> <span class="n">dist</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">Pe_integrand</span> <span class="o">=</span> <span class="n">Pe_numerator</span><span class="o">/</span><span class="n">Pe_denominator</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="c1"># Likewise, weight for GL quadrature</span>
+    <span class="n">Pe_integral</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Pe_integrand</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
+    <span class="n">Pe</span> <span class="o">=</span> <span class="n">T</span><span class="o">**</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="n">Pe_integral</span> <span class="c1"># Full expression with coefficient</span>
+
+    <span class="k">return</span> <span class="n">rhoe</span><span class="p">,</span> <span class="n">Pe</span>
+
+<span class="k">def</span> <span class="nf">Photon</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Solves for the photon energy density and pressure, 𝜌γ, Pγ, as a function of temperature.</span>
+<span class="sd">    INPUT : </span>
+<span class="sd">    Tγ in MeV [1xn ndarray]</span>
+
+<span class="sd">    OUTPUTS :</span>
+<span class="sd">    𝜌γ in dynes per cm^3 [1xn ndarray]</span>
+<span class="sd">    Pγ in [pressure...] [1xn ndarray]</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="n">rhogamma</span> <span class="o">=</span> <span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">15</span> <span class="o">*</span> <span class="n">T</span><span class="o">**</span><span class="mi">4</span>
+    <span class="n">Pgamma</span> <span class="o">=</span> <span class="n">rhogamma</span><span class="o">/</span><span class="mi">3</span> 
+
+    <span class="k">return</span> <span class="n">rhogamma</span><span class="p">,</span> <span class="n">Pgamma</span>
+
+
+<span class="n">rhogamma</span><span class="p">,</span> <span class="n">Pgamma</span> <span class="o">=</span> <span class="n">Photon</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+<span class="n">rhoe</span><span class="p">,</span> <span class="n">Pe</span> <span class="o">=</span> <span class="n">ElectronPositron</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+
+<span class="c1"># Equation 9:</span>
+<span class="n">Tnu</span> <span class="o">=</span> <span class="p">((</span><span class="mi">11</span><span class="o">/</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">rhogamma</span><span class="o">+</span><span class="n">Pgamma</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">rhogamma</span><span class="o">+</span><span class="n">rhoe</span><span class="o">+</span><span class="n">Pgamma</span><span class="o">+</span><span class="n">Pe</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">T</span>
+<span class="n">Tnu9</span> <span class="o">=</span> <span class="n">MeVtoK9</span><span class="p">(</span><span class="n">Tnu</span><span class="p">)</span>
+
+<span class="c1"># Equation 8 in 10^9 K and seconds:</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">T9</span><span class="o">/</span><span class="mf">10.4</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_58848/3590171945.py:37: RuntimeWarning: overflow encountered in multiply
+  Pe_denominator = dist * (np.exp(dist) + 1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Plot of Neutrino-Photon Decoupling</span>
+
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;mathtext.fontset&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;cm&#39;</span>
+<span class="n">default_fontfam</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;font.family&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;serif&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;mathtext.fontset&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;dejavuserif&quot;</span>
+
+<span class="c1">## Initialize the figure and axis</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span><span class="c1">#, dpi=200)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">5e-1</span><span class="p">,</span><span class="mf">1e4</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">5e-2</span><span class="p">,</span><span class="mf">5e1</span><span class="p">)</span>
+<span class="c1">## RC Parameters</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;lines.linewidth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">9</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">1.3</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+
+<span class="c1">## Labels</span>
+<span class="c1">#ax.set_title(r&#39;Neutrino Decoupl|ing&#39;, fontsize=16)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Temperature  $(10^</span><span class="si">{9}</span><span class="s1"> $ K$)$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">30</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Time (Seconds)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">30</span><span class="p">);</span>
+
+<span class="c1">## Plot</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">T9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Tnu9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">);</span>
+
+<span class="c1">## Captions</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$T_{\gamma}$ &quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$T_{\nu}$&quot;</span><span class="p">]</span>
+<span class="n">legend</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f43aac3d49aebd305f6330473cd4b22a192d9439018b76bcaa42df21b8061fe7.png" src="_images/f43aac3d49aebd305f6330473cd4b22a192d9439018b76bcaa42df21b8061fe7.png" />
+</div>
+</div>
+<section id="section-2-the-weak-rates-and-nuclear-statistical-equilibrium">
+<h3>Section 2: The Weak Rates and Nuclear Statistical Equilibrium<a class="headerlink" href="#section-2-the-weak-rates-and-nuclear-statistical-equilibrium" title="Link to this heading">#</a></h3>
+<p>The weak interactions are those between protons and neutrons. Namely, the following reactions:</p>
+<div class="math notranslate nohighlight">
+\[n + \nu_e \leftrightarrows p + e^-\]</div>
+<div class="math notranslate nohighlight">
+\[n + e^+ \leftrightarrows p + \overline{\nu}_e\]</div>
+<div class="math notranslate nohighlight">
+\[n \leftrightarrows p + e^- + \overline{\nu}_e\]</div>
+<p>We denote the rate <span class="math notranslate nohighlight">\(\lambda_{n \rightarrow p}\)</span> as the sum of all of the forward weak reactions and likewise <span class="math notranslate nohighlight">\(\lambda_{p \rightarrow n}\)</span> as the sum of all the reverse weak reactions. These rates can be analytically found, as described in the 1983 paper by Scherrer. In this paper, equations 9 and 10 give that the rates are</p>
+<div class="math notranslate nohighlight">
+\[\lambda_{p \rightarrow n} = K \int_1^\infty dx \frac{x(x+q)^2 (x^2 - 1)^{1/2}}{\left(1+e^{-xz}\right)[1 + e^{(x+q)z_{\nu} + \xi_e}]} + K \int_1^\infty dx \frac{x(x-q)^2 (x^2 - 1)^{1/2}}{\left(1+e^{xz}\right)[1 + e^{-(x-q)z_{\nu} + \xi_e}]} \tag{20}\]</div>
+<p>and that</p>
+<div class="math notranslate nohighlight">
+\[\lambda_{n \rightarrow p} = \lambda_{n\rightarrow p}(-q,-\xi_e) \tag{21}\]</div>
+<p>Where we have that the variables:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(q = (m_n - m_p)/m_e\)</span> is the neutron-proton mass difference divided by the electron mass</p></li>
+<li><p><span class="math notranslate nohighlight">\(z = m_ec^2/k_B T_\gamma\)</span> is a substitution</p></li>
+<li><p><span class="math notranslate nohighlight">\(z_\nu = m_ec^2/k_B T_\nu\)</span> is the same as <span class="math notranslate nohighlight">\(z\)</span> but for the neutrino temperature</p></li>
+<li><p><span class="math notranslate nohighlight">\(K\)</span> is the normalization constant, set so that these integrals go to <span class="math notranslate nohighlight">\(1/\tau\)</span> for low temperatures.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\xi_e\)</span> is the chemical potential of the electron, taken to be zero.</p></li>
+</ul>
+<p>We elect to solve this by Gauss-Laguerre quadrature below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### WEAK RATE CALCULATION ####</span>
+
+<span class="k">def</span> <span class="nf">WeakRate</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">Tnu</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Solves for the weak rates λnp and  λpn by approximating the integral in quadrature. </span>
+<span class="sd">    </span>
+<span class="sd">    INPUT :</span>
+<span class="sd">    Tγ in MeV [1xn ndarray]</span>
+<span class="sd">    Tν in MeV [1xn ndarray]</span>
+<span class="sd">    </span>
+<span class="sd">    OUTPUTS : </span>
+<span class="sd">    λnp [1xn ndarray]</span>
+<span class="sd">    λpn [1xn ndarray]</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># The normalization coefficient </span>
+    <span class="n">K</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">q</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">q</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">taun</span><span class="p">)</span>
+    
+    <span class="c1"># Quadrature setup</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="mi">128</span>
+    <span class="n">points</span><span class="p">,</span> <span class="n">weights</span> <span class="o">=</span> <span class="n">roots_laguerre</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    
+    <span class="c1"># Shorthands</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">points</span>
+    
+    <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">me</span><span class="o">/</span><span class="p">(</span><span class="n">T</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1">#Shift integral from 0 to infinity to 1 to infinity.</span>
+    <span class="n">znu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">me</span><span class="o">/</span><span class="p">(</span><span class="n">Tnu</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Define both integrals, sum, and normalize</span>
+    <span class="n">int1</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">q</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">denom1</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">*</span><span class="n">z</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">x</span><span class="o">+</span><span class="n">q</span><span class="p">)</span><span class="o">*</span><span class="n">znu</span><span class="p">)))</span>
+    <span class="n">int2</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">q</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">denom2</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">z</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">q</span><span class="p">)</span><span class="o">*</span><span class="n">znu</span><span class="p">)))</span>
+
+    <span class="n">lpn</span> <span class="o">=</span> <span class="n">K</span><span class="o">*</span><span class="p">(</span><span class="n">int1</span><span class="o">/</span><span class="n">denom1</span><span class="o">+</span><span class="n">int2</span><span class="o">/</span><span class="n">denom2</span><span class="p">)</span>
+    
+    <span class="c1"># Likewise for reverse</span>
+    <span class="n">rint1</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">q</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">rdenom1</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">*</span><span class="n">z</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">q</span><span class="p">)</span><span class="o">*</span><span class="n">znu</span><span class="p">)))</span>
+    
+    <span class="n">rint2</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">q</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">rdenom2</span> <span class="o">=</span><span class="p">((</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">z</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">q</span><span class="p">))</span><span class="o">*</span><span class="n">znu</span><span class="p">)))</span>
+    
+    <span class="n">lnp</span> <span class="o">=</span> <span class="n">K</span><span class="o">*</span><span class="p">(</span><span class="n">rint1</span><span class="o">/</span><span class="n">rdenom1</span> <span class="o">+</span> <span class="n">rint2</span><span class="o">/</span><span class="n">rdenom2</span><span class="p">)</span>
+
+    <span class="c1"># Weight for GL Quadrature</span>
+    <span class="n">lnp</span> <span class="o">=</span> <span class="n">lnp</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">lpn</span> <span class="o">=</span> <span class="n">lpn</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># Approximates the integral</span>
+    <span class="n">lnp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">lnp</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
+    <span class="n">lpn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">lpn</span><span class="p">,</span><span class="n">weights</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">lnp</span><span class="p">,</span> <span class="n">lpn</span>
+
+<span class="n">weak_pn</span><span class="p">,</span> <span class="n">weak_np</span> <span class="o">=</span> <span class="n">WeakRate</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">Tnu</span><span class="p">)</span>
+
+<span class="c1"># Quadrature generates NaNs and overflows for some reason at very low temperatures.</span>
+<span class="n">weak_pn</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">weak_pn</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">weak_pn</span><span class="p">[</span><span class="n">weak_pn</span><span class="o">&lt;</span><span class="mf">1e-20</span><span class="p">]</span>
+<span class="n">weak_np</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">weak_np</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">taun</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_58848/3869864321.py:31: RuntimeWarning: overflow encountered in exp
+  denom1 = ((1+np.exp(-x*z))*(1+np.exp((x+q)*znu)))
+/tmp/ipykernel_58848/3869864321.py:33: RuntimeWarning: overflow encountered in exp
+  denom2 = ((1+np.exp(x*z))*(1+np.exp(-(x-q)*znu)))
+/tmp/ipykernel_58848/3869864321.py:33: RuntimeWarning: overflow encountered in multiply
+  denom2 = ((1+np.exp(x*z))*(1+np.exp(-(x-q)*znu)))
+/tmp/ipykernel_58848/3869864321.py:39: RuntimeWarning: overflow encountered in exp
+  rdenom1 = ((1+np.exp(-x*z))*(1+np.exp((x-q)*znu)))
+/tmp/ipykernel_58848/3869864321.py:42: RuntimeWarning: overflow encountered in exp
+  rdenom2 =((1+np.exp(x*z))*(1+np.exp((-(x+q))*znu)))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Plot of Weak Reactions.</span>
+
+<span class="c1">## Initialize the figure and axis</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">1.15</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+
+<span class="c1">## Labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Reaction Rate&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">30</span><span class="p">);</span> <span class="c1"># ($\rm{cm^3 s^{-1}}$)&#39;</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Temperature ($10^9 ~ \rm</span><span class="si">{K}</span><span class="s1">$)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">30</span><span class="p">);</span>
+
+<span class="c1">## Plot</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">T9</span><span class="p">,</span><span class="n">weak_np</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">T9</span><span class="p">,</span> <span class="n">weak_pn</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">);</span>
+
+
+
+<span class="n">ax</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">taun</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="mf">1e2</span><span class="p">,</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;deepskyblue&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mf">3.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">1.1e-6</span><span class="p">,</span><span class="mf">5e1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">1e2</span><span class="p">,</span><span class="mf">1e-1</span><span class="p">)</span>
+
+<span class="c1">## Legend</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$n \rightarrow p$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$p \rightarrow n$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$\tau^{\,-1}$&quot;</span><span class="p">]</span>
+
+<span class="n">legend</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">24</span><span class="p">);</span>
+<span class="c1">#plt.savefig(&#39;/home/aidan/WeakRates.pdf&#39;, dpi=250,  bbox_inches=&#39;tight&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0b8d34f97e4d4e7d0aef523cc1185a42004e163bc67f7bd81bcff6b597218738.png" src="_images/0b8d34f97e4d4e7d0aef523cc1185a42004e163bc67f7bd81bcff6b597218738.png" />
+</div>
+</div>
+<p>In equilibrium (for a photon temperature of &gt;0.8 MeV or so), the number density of nuclear species is governed by the Saha equation. We can express the mass fraction of elements immediately before BBN begins by knowing only the binding energy and spin states of each nucleus along with the equilibrium mass fractions of protons and neutrons. This is because at high temperatures, <em>all</em> species are in equilibrium with protons and neutrons. In NSE, we can express the number density of nuclei of species <span class="math notranslate nohighlight">\(X\)</span> , which would be a light nuclei in our case, such as Deuterium or Tritium, as:</p>
+<div class="math notranslate nohighlight">
+\[\frac{n_X}{n_n n_p} = \frac{m_{s,X}}{4} \left(\frac{2\pi m_X}{m_nm_p T}\right)^{3/2} e^{(m_n + m_p - m_X)/T} \tag{17}\]</div>
+<p>Where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(n_n\)</span>, <span class="math notranslate nohighlight">\(n_p\)</span>, <span class="math notranslate nohighlight">\(n_X\)</span> are the number densities of neutrons, protons, and species <span class="math notranslate nohighlight">\(X\)</span> respectively</p></li>
+<li><p><span class="math notranslate nohighlight">\(m_{s,X}\)</span> is the number of possible spin states of nucleus <span class="math notranslate nohighlight">\(X\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_n\)</span>, <span class="math notranslate nohighlight">\(m_p\)</span>, <span class="math notranslate nohighlight">\(m_X\)</span> are the masses of neutrons, protons, and species <span class="math notranslate nohighlight">\(X\)</span> and</p></li>
+<li><p>T is temperature in MeV</p></li>
+</ul>
+<p>This can be reexpressed as a more useful quantity for our case by expressing the number density of a species with respect to the number density of baryons overall. That rexpression, given in Dodelson and Schmidt’s <em>Modern Cosmology</em> (equation 4.16), is</p>
+<div class="math notranslate nohighlight">
+\[\frac{n_X}{n_b} \sim \eta_b \left(\frac{T}{m_n}\right)^{3/2} e^{B_X/T} \tag{18}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\eta_b\)</span> is the baryon to photon ratio and <span class="math notranslate nohighlight">\(B_X\)</span> is the binding energy of a nucleus of species <span class="math notranslate nohighlight">\(X\)</span>. This relation holds when <span class="math notranslate nohighlight">\(\eta_b\)</span> dominates the exponential term, and thus holds well for immediately pre-BBN temperatures, since they are not too high. From Kolb and Turner equation 4.7, we have that the NSE mass fraction of a species X can be expressed as (the somewhat unwieldy) expression:</p>
+<div class="math notranslate nohighlight">
+\[X_A = g_A \left(\zeta (3)^{A-1} \pi^{(1-A)/2} 2^{(3A-5)/2}\right) A^{5/2} \left(\frac{T}{m_n}\right)^{3(A-1)/2} \eta^{A-1} X_p^Z X_n^{A-Z} \exp(B_A/T) \tag{19}\]</div>
+<p>These allow us to find our initial conditions, since at high temperatures, NSE will be in play.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Nuclear Statistical Equilibrium (NSE) ###</span>
+
+<span class="k">def</span> <span class="nf">NSEAbundances</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">Bind</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">gA</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    T - Temperature in MeV</span>
+<span class="sd">    Bind - Binding energy in MeV</span>
+<span class="sd">    A - Mass number of the atom</span>
+<span class="sd">    gA - </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">coeff</span> <span class="o">=</span> <span class="n">gA</span> <span class="o">*</span> <span class="n">η0</span><span class="o">**</span><span class="p">(</span><span class="n">A</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">apery</span><span class="o">**</span><span class="p">(</span><span class="n">A</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">A</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">((</span><span class="mi">3</span><span class="o">*</span><span class="n">A</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)))</span> <span class="o">*</span> <span class="n">A</span><span class="o">**</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1">#XA = coeff * (T/(A*mn))**((3*(A-1))/2) * np.exp(Bind/T)</span>
+    <span class="n">XA</span> <span class="o">=</span> <span class="n">coeff</span> <span class="o">*</span> <span class="p">(</span><span class="n">T</span><span class="o">/</span><span class="n">mn</span><span class="p">)</span><span class="o">**</span><span class="p">((</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">Bind</span><span class="o">/</span><span class="n">T</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">XA</span>
+
+<span class="c1"># Initial conditions for BBN code, NSE abundances of elements.</span>
+
+<span class="c1">## Out-front factor is assuming initial conditions at our starting time have Xp ~ Xn, so it is (1/2)^A where A is the mass number.</span>
+
+<span class="n">XDNSE0</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="n">NSEAbundances</span><span class="p">(</span><span class="n">T9i</span><span class="p">,</span> <span class="n">Bd</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">XTNSE0</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span> <span class="o">*</span> <span class="n">NSEAbundances</span><span class="p">(</span><span class="n">T9i</span><span class="p">,</span> <span class="n">Bt</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">X3NSE0</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span> <span class="o">*</span> <span class="n">NSEAbundances</span><span class="p">(</span><span class="n">T9i</span><span class="p">,</span> <span class="n">B3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">X4NSE0</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">16</span><span class="p">)</span> <span class="o">*</span> <span class="n">NSEAbundances</span><span class="p">(</span><span class="n">T9i</span><span class="p">,</span> <span class="n">B4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">XLi7NSE0</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">128</span><span class="p">)</span> <span class="o">*</span> <span class="n">NSEAbundances</span><span class="p">(</span><span class="n">T9i</span><span class="p">,</span> <span class="n">Bli7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">XBe7NSE0</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">128</span><span class="p">)</span> <span class="o">*</span> <span class="n">NSEAbundances</span><span class="p">(</span><span class="n">T9i</span><span class="p">,</span> <span class="n">Bbe7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="n">X0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">8</span><span class="p">,)</span>
+<span class="n">X0</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">Q</span><span class="o">/</span><span class="p">(</span><span class="n">T9i</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">X0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">X0</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">X0</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">XDNSE0</span>
+<span class="n">X0</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">XTNSE0</span>
+<span class="n">X0</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">X3NSE0</span>
+<span class="n">X0</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">X4NSE0</span>
+<span class="n">X0</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="n">XLi7NSE0</span>
+<span class="n">X0</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="n">XBe7NSE0</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-3-the-strong-rates-and-the-reaction-network">
+<h3>Section 3: The Strong Rates and The Reaction Network<a class="headerlink" href="#section-3-the-strong-rates-and-the-reaction-network" title="Link to this heading">#</a></h3>
+<p>All reactions between nucleides interacting by way of strong reactions, that is atomic reactions, must also be considered in the big bang nucleosynthesis model. These reactions consist of no more than 4 <em>distinct</em> nuclei, which we can express schematically as the nuclear reaction</p>
+<div class="math notranslate nohighlight">
+\[ Y_i + Y_j \underset{[kl]_{ij}}{\overset{[ij]_{kl}}{\rightleftharpoons}} Y_k + Y_l \tag{24}\]</div>
+<p>Our strong nuclear rates aretaken from Kawano and Smith’s 1993 paper as is, in their polynomial fits. The reason for doing so is that the nuclear physics is quite tedious and we lose little from approximating these rates in this way.</p>
+<p><img alt="RXNNetwork" src="_images/network.png" /></p>
+<p>The strong reaction rates are composed using the reaction cross-section of each reaction, along with other constants. Furthermore, we have that in a generic four-body reaction, say</p>
+<p>Where we have two species, <span class="math notranslate nohighlight">\(Y_i\)</span> and <span class="math notranslate nohighlight">\(Y_j\)</span> combining with a rate <span class="math notranslate nohighlight">\([ij]_{kl}\)</span> to produce the two species <span class="math notranslate nohighlight">\(Y_k\)</span> and <span class="math notranslate nohighlight">\(Y_l\)</span>. The reverse rate, <span class="math notranslate nohighlight">\([kl]_{ij}\)</span> is the rate at which <span class="math notranslate nohighlight">\(Y_k\)</span> and <span class="math notranslate nohighlight">\(Y_l\)</span> combine and produce <span class="math notranslate nohighlight">\(Y_i\)</span> and <span class="math notranslate nohighlight">\(Y_j\)</span>. We are interested in the forward and reverse rates for our reaction network. They can be computed and generally take the form</p>
+<div class="math notranslate nohighlight">
+\[[ij]_{kl} = \rho_b N_A \langle\sigma v\rangle_{jk}  \tag{25}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\rho_b\)</span> is the baryon density, <span class="math notranslate nohighlight">\(N_A\)</span> is Avogadro’s number, and</p>
+<div class="math notranslate nohighlight">
+\[\langle \sigma v \rangle_{jk} = \int_0^\infty f(v, T) \sigma (v) v \, dv  \tag{26}\]</div>
+<p>is the Boltzmann distribution over the two species and their reaction cross-section <span class="math notranslate nohighlight">\(\sigma(v)\)</span>.</p>
+<p>While this <em>can</em> be computed, these rates have already been computed by Fowler, Caughlan, and Zimmerman in their 1975 paper <em>Thermonuclear Reaction Rates V</em> or FCZV and in Wagoner 1967. We will use this instead.
+We will consider reactions involving/creating protons, neutrons, Deuterium, Tritium, Helium-3, Helium-4, Lithium-6, Lithium-7, Beryllium-6, and Beryllium-7. While other elements are involved in BBN, these represent the vast majority of reactants by mass fraction.</p>
+<p>The reaction network can be constructed as follows</p>
+<div class="math notranslate nohighlight">
+\[\frac{dY_i}{dt} = \sum_{j,k,l}  N_i \left(\frac{Y_k^{N_k}Y_l^{N_l}}{N_k!N_l!} [kl]_{ij} - \frac{Y_i^{N_i}Y_j^{N_j}}{N_i!N_j!} [ij]_{kl}\right)  \tag{27}\]</div>
+<p>Which allows us to create a coupled system of first-order non-linear ODEs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">StrongRates</span><span class="p">(</span><span class="n">T9</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Approximate the strong reaction rates using Kawano &amp; Smith&#39;s 1993 polynomial approximations. </span>
+<span class="sd">    </span>
+<span class="sd">    INPUT: </span>
+<span class="sd">    T9 - Temperature array in 10^9 Kelvins. TYPE : [1xn] or [n] ndarray or equivalent.</span>
+<span class="sd">    </span>
+<span class="sd">    OUTPUTS:</span>
+<span class="sd">    Forward - Reaction rates in cubic cm per second per mole. TYPE : [11xn] ndarray</span>
+<span class="sd">    Reverse - Reverse reaction rates in the same units. Same type. </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="c1"># A word of warning to those who want to code this-- Use an Einstein sum. Especially for bigger networks/stellar nucleosynthesis.</span>
+    <span class="c1">#  I had already written the reaction network by the time I figured out that trivializes it and makes it much more compact.</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="n">K9toMeV</span><span class="p">(</span><span class="n">T9</span><span class="p">)</span>
+
+    <span class="n">h</span><span class="o">=</span> <span class="mf">3.33683e4</span><span class="o">*</span><span class="n">η0</span>
+    <span class="n">rhob</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="n">T9</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
+
+    <span class="c1"># Shorthands introduced by Kawano 1993</span>
+    
+    <span class="n">T9a</span> <span class="o">=</span> <span class="n">T9</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.1378</span><span class="o">*</span><span class="n">T9</span><span class="p">)</span>
+    <span class="n">T9b</span> <span class="o">=</span> <span class="n">T9</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.1071</span><span class="o">*</span><span class="n">T9</span><span class="p">)</span>
+    <span class="n">T9c</span> <span class="o">=</span> <span class="n">T9</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.759</span><span class="o">*</span><span class="n">T9</span><span class="p">)</span>
+    <span class="n">T9d</span> <span class="o">=</span> <span class="n">T9</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">13.08</span><span class="o">*</span><span class="n">T9</span><span class="p">)</span>
+    
+    
+    <span class="c1"># Forward Rates are polynomial fits, pulled from Table 2 of Kawano 1993. They are reaction cross-sections.</span>
+    
+    <span class="c1"># This is &lt;01&gt; * NA</span>
+    <span class="n">crosssection</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span>
+    
+        <span class="c1">#1. p + n --&gt; D + γ</span>
+        <span class="mf">4.742e4</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mf">0.8504</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.49</span> <span class="o">*</span> <span class="n">T9</span> <span class="o">-</span> <span class="mf">0.0962</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">8.47e-3</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mf">2.8e-4</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="p">)),</span>
+    
+        <span class="c1">#2. D + p --&gt; He3 + γ</span>
+        <span class="mf">2.65e3</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">3.720</span><span class="o">/</span><span class="p">(</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)))</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.112</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.99</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.56</span><span class="o">*</span><span class="n">T9</span> <span class="o">+</span> <span class="mf">0.162</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.324</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">3</span><span class="p">)),</span>
+        
+        <span class="c1">#3. D + D --&gt; n + He3</span>
+        <span class="mf">3.95e8</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">4.259</span><span class="o">/</span><span class="p">(</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)))</span> <span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.098</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.765</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.525</span><span class="o">*</span><span class="n">T9</span> <span class="o">+</span> <span class="mf">9.61e-3</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.0167</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span>\
+            <span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+        
+        <span class="c1">#4. D + D --&gt; p + T</span>
+        <span class="mf">4.17e8</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">4.258</span><span class="o">/</span><span class="p">(</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)))</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.098</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.518</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.355</span><span class="o">*</span><span class="n">T9</span> <span class="o">-</span> <span class="mf">0.01</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.018</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span>\
+            <span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+        
+        <span class="c1">#5. He3 + n --&gt; p + T</span>
+        <span class="mf">7.21e8</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.508</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.228</span><span class="o">*</span><span class="n">T9</span><span class="p">),</span>
+
+        <span class="c1">#6. T + D --&gt; n + He4</span>
+        <span class="mf">1.063e11</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">4.559</span><span class="o">/</span><span class="p">(</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="n">T9</span><span class="o">/</span><span class="mf">0.0754</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.092</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.375</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.242</span><span class="o">*</span><span class="n">T9</span> <span class="o">+</span> <span class="mf">33.82</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mf">55.42</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="mf">8.047e8</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.4857</span><span class="o">/</span><span class="n">T9</span><span class="p">),</span>
+        
+        <span class="c1">#7. He3 + D --&gt; p + He4</span>
+        <span class="mf">5.021e10</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">7.144</span><span class="o">/</span><span class="p">(</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="n">T9</span><span class="o">/</span><span class="mf">0.27</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.058</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.603</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.245</span><span class="o">*</span><span class="n">T9</span> <span class="o">+</span> <span class="mf">6.97</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mf">7.19</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="mf">5.212e8</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">1.762</span><span class="o">/</span><span class="n">T9</span><span class="p">),</span>
+        
+        <span class="c1">#8. He3 + He4 --&gt; Be7 + γ</span>
+        <span class="mf">4.817e6</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">14.964</span><span class="o">/</span><span class="p">(</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)))</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.0325</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">1.04e-3</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">2.37e-4</span> <span class="o">*</span> <span class="n">T9</span> <span class="o">-</span> <span class="mf">8.11e-5</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">4.69e-5</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="mf">5.938e6</span><span class="o">*</span><span class="n">T9b</span><span class="o">**</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span><span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">12.859</span><span class="o">/</span><span class="p">(</span><span class="n">T9b</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">))),</span>
+    
+
+        <span class="c1">#9. T + He4 --&gt; Li7 + γ</span>
+        <span class="mf">3.032e5</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">8.090</span><span class="o">/</span><span class="p">(</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)))</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.0516</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.0229</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mf">8.28e-3</span><span class="o">*</span><span class="n">T9</span> <span class="o">-</span> <span class="mf">3.28e-4</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">3.01e-4</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="mf">5.109e5</span><span class="o">*</span><span class="n">T9a</span><span class="o">**</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">8.068</span><span class="o">/</span><span class="p">(</span><span class="n">T9a</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">))),</span>
+        
+        
+        <span class="c1">#10. Be7 + n --&gt; p + Li7</span>
+        <span class="mf">2.675e9</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.56</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.179</span><span class="o">*</span><span class="n">T9</span> <span class="o">-</span> <span class="mf">0.0283</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">2.21e-3</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mf">6.85e-5</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="mf">9.391e8</span> <span class="o">*</span> <span class="n">T9d</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">4.467e7</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.07486</span><span class="o">/</span><span class="n">T9</span><span class="p">),</span>
+        
+
+        <span class="c1">#11. Li7 + p --&gt; He4 + He4</span>
+        <span class="mf">1.096e9</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">8.472</span><span class="o">/</span><span class="p">(</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)))</span> <span class="o">-</span> <span class="mf">4.83e8</span><span class="o">*</span><span class="n">T9c</span><span class="o">**</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">8.472</span><span class="o">/</span><span class="p">(</span><span class="n">T9c</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)))</span> <span class="o">+</span> <span class="mf">1.06e10</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">30.442</span><span class="o">/</span><span class="n">T9</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.56e5</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">8.472</span><span class="o">/</span><span class="p">(</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="n">T9</span><span class="o">/</span><span class="mf">1.696</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.049</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">2.5</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.86</span><span class="o">*</span><span class="n">T9</span> <span class="o">+</span> <span class="mf">3.52</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mf">3.08</span><span class="o">*</span><span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span> <span class="o">+</span> <span class="mf">1.55e6</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">4.478</span><span class="o">/</span><span class="n">T9</span><span class="p">)</span>\
+        <span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="p">])</span>
+    
+    <span class="c1"># Eq. 40 in the text.</span>
+    <span class="n">ForwardRate</span> <span class="o">=</span> <span class="p">(</span><span class="n">crosssection</span><span class="p">)</span><span class="o">*</span><span class="n">rhob</span>
+
+    <span class="n">mass_excess</span> <span class="o">=</span> <span class="mf">11.605</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+        <span class="p">(</span><span class="n">mn</span><span class="o">+</span><span class="n">mp</span><span class="p">)</span><span class="o">-</span> <span class="n">md</span><span class="p">,</span> <span class="p">(</span><span class="n">md</span> <span class="o">+</span> <span class="n">mp</span><span class="p">)</span><span class="o">-</span><span class="n">m3</span><span class="p">,</span> <span class="p">(</span><span class="n">md</span><span class="o">+</span><span class="n">md</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">mn</span> <span class="o">+</span> <span class="n">m3</span><span class="p">),</span> <span class="p">(</span><span class="n">md</span> <span class="o">+</span> <span class="n">md</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">mp</span> <span class="o">+</span> <span class="n">mt</span><span class="p">),</span> <span class="p">(</span><span class="n">m3</span> <span class="o">+</span> <span class="n">mn</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">mp</span> <span class="o">+</span> <span class="n">mt</span><span class="p">),</span> <span class="p">(</span><span class="n">mt</span><span class="o">+</span><span class="n">md</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">mn</span><span class="o">+</span><span class="n">m4</span><span class="p">),</span> <span class="p">(</span><span class="n">m3</span><span class="o">+</span><span class="n">md</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">mp</span><span class="o">+</span><span class="n">m4</span><span class="p">),</span> <span class="p">(</span><span class="n">m3</span> <span class="o">+</span><span class="n">m4</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">mbe7</span><span class="p">),</span> <span class="p">(</span><span class="n">mt</span> <span class="o">+</span> <span class="n">m4</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">mli7</span><span class="p">),</span> <span class="p">(</span><span class="n">mn</span> <span class="o">+</span> <span class="n">mbe7</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">mp</span><span class="o">+</span><span class="n">mli7</span><span class="p">),</span> <span class="p">(</span><span class="n">mli7</span><span class="o">+</span><span class="n">mp</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">m4</span><span class="o">+</span><span class="n">m4</span><span class="p">)</span>
+        <span class="p">])</span>
+    
+    <span class="n">an</span><span class="p">,</span> <span class="n">ap</span><span class="p">,</span> <span class="n">ad</span><span class="p">,</span> <span class="n">at</span><span class="p">,</span> <span class="n">a3</span><span class="p">,</span> <span class="n">a4</span><span class="p">,</span> <span class="n">ali7</span><span class="p">,</span> <span class="n">abe7</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">mn</span><span class="p">,</span> <span class="n">mp</span><span class="p">,</span> <span class="n">md</span><span class="p">,</span> <span class="n">mt</span><span class="p">,</span> <span class="n">m3</span><span class="p">,</span> <span class="n">m4</span><span class="p">,</span> <span class="n">mli7</span><span class="p">,</span> <span class="n">mbe7</span><span class="p">])</span><span class="o">/</span><span class="n">amu</span>
+
+    <span class="n">conversion</span> <span class="o">=</span> <span class="mf">0.98677e10</span>
+    <span class="n">prefactors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+
+        <span class="c1">## A = 1 for p &amp; n, = 2 for D, = 3 for T &amp; He3, = 4 for He4, = 7 for Be7 and Li7</span>
+        <span class="c1">## g = 2 for n,p, T, He3, g=3 for D, g=1 for He4, g=4 for Li7 and Be7.</span>
+        <span class="c1">## Below is (g)*(A)^3/2 * exp(-Q/T) and, in the case of photon emission, multiplied by the corrective factor in Eq. 42.</span>
+
+        <span class="c1">#1. p + n --&gt; D + γ</span>
+        <span class="n">conversion</span><span class="o">*</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">an</span><span class="o">*</span><span class="n">ap</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ad</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span> <span class="n">rhob</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">mass_excess</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">T9</span><span class="p">))),</span><span class="c1">#/((2*np.pi)**1.5*(hbar*c)**3),#((2*2)/(3) * ((mn*mp)/(md))**(3/2)* rhob**(-1) * T**(3/2) * np.exp(-mass_excess[0]/(T)))/((2*np.pi)**1.5*(hbar*c)**3),</span>
+        <span class="c1">#2. D + p --&gt; He3 + γ</span>
+        <span class="n">conversion</span><span class="o">*</span><span class="p">((</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">ad</span><span class="o">*</span><span class="n">ap</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">a3</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span> <span class="n">rhob</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">mass_excess</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">T9</span><span class="p">)))</span> <span class="p">,</span>
+        <span class="c1">#3. D + D --&gt; n + He3</span>
+        <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">ad</span><span class="o">*</span><span class="n">ad</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">an</span><span class="o">*</span><span class="n">a3</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">mass_excess</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">T9</span><span class="p">)),</span>
+        <span class="c1">#4. D + D --&gt; p + T</span>
+        <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">ad</span><span class="o">*</span><span class="n">ad</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ap</span><span class="o">*</span><span class="n">at</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">mass_excess</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">T9</span><span class="p">)),</span>
+        <span class="c1">#5. He3 + n --&gt; p + T</span>
+        <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">a3</span><span class="o">*</span><span class="n">an</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ap</span><span class="o">*</span><span class="n">at</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">mass_excess</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">/</span><span class="p">(</span><span class="n">T9</span><span class="p">)),</span>
+        <span class="c1">#6. T + D --&gt; n + He4</span>
+        <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">at</span><span class="o">*</span><span class="n">ad</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">an</span><span class="o">*</span><span class="n">a4</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">mass_excess</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">T9</span><span class="p">)),</span>
+        <span class="c1">#7. He3 + D --&gt; p + He4</span>
+        <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">a3</span><span class="o">*</span><span class="n">ad</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ap</span><span class="o">*</span><span class="n">a4</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">mass_excess</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">T9</span><span class="p">)),</span>
+        <span class="c1">#8. He3 + He4 --&gt; Be7 + γ</span>
+        <span class="n">conversion</span><span class="o">*</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">a3</span><span class="o">*</span><span class="n">a4</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">abe7</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span> <span class="n">rhob</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">mass_excess</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">T9</span><span class="p">))),</span>
+        <span class="c1">#9. T + He4 --&gt; Li7 + γ</span>
+        <span class="n">conversion</span><span class="o">*</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">at</span><span class="o">*</span><span class="n">a4</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ali7</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span> <span class="n">rhob</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">T9</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">mass_excess</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">T9</span><span class="p">))),</span>
+        <span class="c1">#10. Be7 + n --&gt; p + Li7</span>
+        <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">an</span><span class="o">*</span><span class="n">abe7</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ap</span><span class="o">*</span><span class="n">ali7</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">mass_excess</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">T9</span><span class="p">)),</span>
+        <span class="c1">#11. Li7 + p --&gt; He4 + He4 </span>
+        <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">ali7</span><span class="o">*</span><span class="n">ap</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">a4</span><span class="o">*</span><span class="n">a4</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">mass_excess</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">T9</span><span class="p">))</span>
+        <span class="p">])</span>
+
+
+    <span class="n">ReverseRate</span> <span class="o">=</span> <span class="n">prefactors</span><span class="o">*</span><span class="n">ForwardRate</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">ForwardRate</span><span class="p">,</span> <span class="n">ReverseRate</span><span class="p">])</span><span class="c1">#, crosssection, mass_excess</span>
+
+<span class="n">ForwardRate</span><span class="p">,</span> <span class="n">ReverseRate</span> <span class="o">=</span> <span class="n">StrongRates</span><span class="p">(</span><span class="n">T9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interpolation</span> <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">interp1d</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="p">[</span><span class="n">T9</span><span class="p">,</span><span class="n">T</span><span class="p">,</span> <span class="n">weak_np</span><span class="p">,</span> <span class="n">weak_pn</span><span class="p">],</span> <span class="s1">&#39;cubic&#39;</span><span class="p">,</span><span class="n">fill_value</span><span class="o">=</span><span class="s1">&#39;extrapolate&#39;</span><span class="p">)</span> <span class="c1"># Allows us to call functions within this function.</span>
+
+<span class="k">def</span> <span class="nf">BBN</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">Y</span><span class="p">):</span>
+    
+    <span class="n">Yp</span><span class="p">,</span> <span class="n">Yn</span><span class="p">,</span> <span class="n">YD</span><span class="p">,</span> <span class="n">YT</span><span class="p">,</span> <span class="n">YHe3</span><span class="p">,</span> <span class="n">YHe4</span><span class="p">,</span> <span class="n">YBe7</span><span class="p">,</span> <span class="n">YLi7</span> <span class="o">=</span> <span class="n">Y</span>
+     
+    <span class="n">T9</span><span class="p">,</span><span class="n">T</span><span class="p">,</span> <span class="n">np</span><span class="p">,</span><span class="n">pn</span> <span class="o">=</span> <span class="n">interpolation</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    
+    <span class="n">T9</span> <span class="o">=</span> <span class="mf">10.4</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">F</span><span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="n">StrongRates</span><span class="p">(</span><span class="n">T9</span><span class="p">)</span>
+
+    <span class="c1">#1. p + n &lt;--&gt; D + γ</span>
+
+    <span class="c1">#2. D + p &lt;--&gt; He3 + γ</span>
+ 
+    <span class="c1">#3. D + D &lt;--&gt; n + He3</span>
+
+    <span class="c1">#4. D + D &lt;--&gt; p + T</span>
+
+    <span class="c1">#5. He3 + n &lt;--&gt; p + T</span>
+
+    <span class="c1">#6. T + D &lt;--&gt; n + He4</span>
+
+    <span class="c1">#7. He3 + D &lt;--&gt; p + He4</span>
+
+    <span class="c1">#8. He3 + He4 &lt;--&gt; Be7 + γ</span>
+
+    <span class="c1">#9. T + He4 &lt;--&gt; Li7 + γ</span>
+
+    <span class="c1">#10. Be7 + n &lt;--&gt; p + Li7</span>
+
+    <span class="c1">#11. Li7 + p &lt;--&gt; He4 + He4</span>
+
+    <span class="c1">#YD = YD * 1/2</span>
+    <span class="c1">#YT = YT * 1/3</span>
+    <span class="c1">#YHe3 = YHe3 * 1/3</span>
+    <span class="c1">#YLi7 = YLi7* 1/7</span>
+    <span class="c1">#YBe7 = YBe7 * 1/7</span>
+
+    
+    <span class="n">dYpF</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">*</span><span class="n">Yp</span> <span class="o">+</span> <span class="n">pn</span><span class="o">*</span><span class="n">Yn</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">Yn</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YD</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">F</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">Yn</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">YD</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="n">YBe7</span><span class="o">*</span><span class="n">Yn</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="n">YLi7</span><span class="o">*</span><span class="n">Yp</span>
+    <span class="n">dYnF</span> <span class="o">=</span> <span class="o">-</span><span class="n">pn</span><span class="o">*</span><span class="n">Yn</span> <span class="o">+</span> <span class="n">np</span><span class="o">*</span><span class="n">Yp</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">Yn</span> <span class="o">+</span>  <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">F</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">Yn</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">*</span><span class="n">YT</span><span class="o">*</span><span class="n">YD</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="n">YBe7</span><span class="o">*</span><span class="n">Yn</span>
+    <span class="n">dYDF</span> <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">Yn</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YD</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">*</span><span class="n">YT</span><span class="o">*</span><span class="n">YD</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">YD</span>
+    <span class="n">dYTF</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span> <span class="n">F</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">Yn</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">*</span><span class="n">YT</span><span class="o">*</span><span class="n">YD</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">*</span><span class="n">YT</span><span class="o">*</span><span class="n">YHe4</span>
+    <span class="n">dYHe3F</span> <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YD</span> <span class="o">+</span>  <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">Yn</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">YD</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">*</span><span class="n">YHe3</span>
+    <span class="n">dYHe4F</span> <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">*</span><span class="n">YT</span><span class="o">*</span><span class="n">YD</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">YD</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">*</span><span class="n">YHe3</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">*</span><span class="n">YT</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">F</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="n">YLi7</span><span class="o">*</span><span class="n">Yp</span>
+    <span class="n">dYBe7F</span> <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">*</span><span class="n">YHe3</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="n">YBe7</span><span class="o">*</span><span class="n">Yn</span>
+    <span class="n">dYLi7F</span> <span class="o">=</span> <span class="n">F</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">*</span><span class="n">YT</span><span class="o">*</span><span class="n">YHe4</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="n">YBe7</span><span class="o">*</span><span class="n">Yn</span> <span class="o">-</span> <span class="n">F</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="n">YLi7</span><span class="o">*</span><span class="n">Yp</span> 
+
+    <span class="n">dYpR</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YT</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YT</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">*</span><span class="n">Yp</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="n">YLi7</span><span class="o">*</span><span class="n">Yp</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">R</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">dYnR</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">Yn</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YT</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">*</span><span class="n">Yn</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="n">YLi7</span><span class="o">*</span><span class="n">Yp</span>
+    <span class="n">dYDR</span> <span class="o">=</span> <span class="o">-</span><span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">YD</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">Yn</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YT</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">*</span><span class="n">Yp</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">*</span><span class="n">Yp</span>
+    <span class="n">dYTR</span> <span class="o">=</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YT</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YT</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">*</span><span class="n">Yp</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">*</span><span class="n">YLi7</span>
+    <span class="n">dYHe3R</span> <span class="o">=</span> <span class="o">-</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">YHe3</span><span class="o">*</span><span class="n">Yn</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">*</span><span class="n">Yp</span><span class="o">*</span><span class="n">YT</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">*</span><span class="n">Yp</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">*</span><span class="n">YBe7</span>
+    <span class="n">dYHe4R</span> <span class="o">=</span> <span class="o">-</span><span class="n">R</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">*</span><span class="n">Yn</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">*</span><span class="n">Yp</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">*</span><span class="n">YBe7</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">*</span><span class="n">YLi7</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span><span class="n">R</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">dYBe7R</span> <span class="o">=</span> <span class="o">-</span><span class="n">R</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">*</span><span class="n">YBe7</span> <span class="o">+</span> <span class="n">R</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="n">YLi7</span><span class="o">*</span><span class="n">Yp</span>
+    <span class="n">dYLi7R</span> <span class="o">=</span> <span class="o">-</span><span class="n">R</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">*</span><span class="n">YLi7</span> <span class="o">-</span> <span class="n">R</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="n">YLi7</span><span class="o">*</span><span class="n">Yp</span> <span class="o">+</span>  <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">R</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="n">YHe4</span><span class="o">**</span><span class="mi">2</span> 
+
+    <span class="n">dYp</span> <span class="o">=</span> <span class="n">dYpF</span> <span class="o">+</span> <span class="n">dYpR</span>
+    <span class="n">dYn</span> <span class="o">=</span> <span class="n">dYnF</span> <span class="o">+</span> <span class="n">dYnR</span>
+    <span class="n">dYD</span> <span class="o">=</span> <span class="n">dYDF</span> <span class="o">+</span> <span class="n">dYDR</span>
+    <span class="n">dYT</span> <span class="o">=</span> <span class="n">dYTF</span><span class="o">+</span><span class="n">dYTR</span>
+    <span class="n">dYHe3</span> <span class="o">=</span> <span class="n">dYHe3F</span> <span class="o">+</span> <span class="n">dYHe3R</span>
+    <span class="n">dYHe4</span> <span class="o">=</span> <span class="n">dYHe4F</span> <span class="o">+</span> <span class="n">dYHe4R</span>
+    <span class="n">dYBe7</span> <span class="o">=</span> <span class="n">dYBe7F</span> <span class="o">+</span> <span class="n">dYBe7R</span>
+    <span class="n">dYLi7</span> <span class="o">=</span> <span class="n">dYLi7F</span> <span class="o">+</span> <span class="n">dYLi7R</span>
+
+    <span class="k">return</span> <span class="n">dYp</span><span class="p">,</span> <span class="n">dYn</span><span class="p">,</span> <span class="n">dYD</span><span class="p">,</span> <span class="n">dYT</span><span class="p">,</span> <span class="n">dYHe3</span><span class="p">,</span> <span class="n">dYHe4</span><span class="p">,</span> <span class="n">dYBe7</span><span class="p">,</span> <span class="n">dYLi7</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solve the ODE</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">BBN</span><span class="p">,</span> <span class="n">t</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="n">X0</span><span class="p">,</span> <span class="n">t_eval</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">dense_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;Radau&#39;</span><span class="p">,</span><span class="n">rtol</span><span class="o">=</span><span class="mf">1e-15</span><span class="p">,</span><span class="n">atol</span><span class="o">=</span><span class="mf">1e-13</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/aidan/micromamba/envs/physics/lib/python3.12/site-packages/scipy/integrate/_ivp/ivp.py:621: UserWarning: At least one element of `rtol` is too small. Setting `rtol = np.maximum(rtol, 2.220446049250313e-14)`.
+  solver = method(fun, t0, y0, tf, vectorized=vectorized, **options)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  message: The solver successfully reached the end of the integration interval.
+  success: True
+   status: 0
+        t: [ 8.035e-05  8.222e-05 ...  7.852e+05  8.035e+05]
+        y: [[ 5.003e-01  5.036e-01 ...  7.258e-01  7.258e-01]
+            [ 4.997e-01  4.964e-01 ...  1.818e-15  2.376e-15]
+            ...
+            [ 4.577e-53  1.688e-63 ...  3.526e-11  3.526e-11]
+            [ 4.571e-53  1.773e-63 ...  4.553e-11  4.553e-11]]
+      sol: &lt;scipy.integrate._ivp.common.OdeSolution object at 0x73a639988e00&gt;
+ t_events: None
+ y_events: None
+     nfev: 87736
+     njev: 730
+      nlu: 9208
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="c1">#weights = np.array([mp/amu, mn/amu, md/amu, mt/amu, m3/amu, m4/amu, mbe7/amu, mli7/amu])</span>
+<span class="c1">## Initialize the figure and axis</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+
+<span class="c1">#colors = [&#39;darkblue&#39;, &#39;red&#39;, &#39;palevioletred&#39;, &#39;coral&#39;, &#39;mediumslateblue&#39;, &#39;darkolivegreen&#39;,&#39;darkturquoise&#39;, &#39;goldenrod&#39;, &#39;firebrick&#39;]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;#e31a1c&#39;</span><span class="p">,</span> <span class="s1">&#39;cornflowerblue&#39;</span><span class="p">,</span> <span class="s1">&#39;sienna&#39;</span><span class="p">,</span> <span class="s1">&#39;#33a02c&#39;</span><span class="p">,</span> <span class="s1">&#39;blueviolet&#39;</span><span class="p">,</span> <span class="s1">&#39;mediumvioletred&#39;</span><span class="p">,</span> <span class="s1">&#39;#ff7f00&#39;</span><span class="p">,</span> <span class="s1">&#39;#cab2d6&#39;</span><span class="p">]</span>
+<span class="c1">## Plot</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">T9</span><span class="p">,</span> <span class="n">weights</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">Y</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">]),</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+
+<span class="c1">## Legend</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="sa">r</span><span class="s1">&#39;$\rm p \, (H)$&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\rm D \, (^2 H)$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\rm T \, (^3 H)$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\rm ^3He$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\rm Y_p \, (^4 He)$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\rm ^7Be$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\rm ^7Li$&#39;</span><span class="p">]</span>
+
+
+<span class="n">box</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_position</span><span class="p">([</span><span class="n">box</span><span class="o">.</span><span class="n">x0</span><span class="p">,</span> <span class="n">box</span><span class="o">.</span><span class="n">y0</span><span class="p">,</span> <span class="n">box</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">box</span><span class="o">.</span><span class="n">height</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="c1">## Tick and Ruling Parameters</span>
+<span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="n">LogFormatterSciNotation</span><span class="p">,</span> <span class="n">LogLocator</span>
+<span class="c1">#ax.set_xlim(1e2,1e-1);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mf">1e-1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">1e-13</span><span class="p">,</span><span class="mf">2e0</span><span class="p">)</span>
+
+
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">1.15</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">36</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">LogLocator</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">LogLocator</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_minor_formatter</span><span class="p">(</span><span class="n">LogFormatterSciNotation</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_minor_formatter</span><span class="p">(</span><span class="n">LogFormatterSciNotation</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">minorticks_on</span><span class="p">()</span>
+
+<span class="c1">## Labels</span>
+
+<span class="c1">#ax.set_title(&#39;Mass Fraction of Elements in BBN&#39;)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Mass Fraction&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">36</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Temperature ($\rm{10^9 K}$)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">36</span><span class="p">);</span>
+
+<span class="n">textlabels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;p&#39;</span><span class="p">,</span><span class="s1">&#39;n&#39;</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="s1">&#39;T&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="s1">&#39;4&#39;</span><span class="p">,</span><span class="s1">&#39;Be&#39;</span><span class="p">,</span><span class="s1">&#39;Li&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The final mass fraction of Hydrogen (protons) is </span><span class="si">{</span><span class="n">weights</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">Y</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="si">:</span><span class="s1"> 0.4g</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The final mass fraction of Helium 4 (Yp) is </span><span class="si">{</span><span class="n">weights</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">Y</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="si">:</span><span class="s1"> 0.4g</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;----------------------------- </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The final percentage of mass fraction of&#39;</span><span class="p">,</span><span class="n">textlabels</span><span class="p">[</span><span class="n">n</span><span class="p">],</span><span class="sa">f</span><span class="s1">&#39;is </span><span class="si">{</span><span class="n">weights</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">Y</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">Y</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="si">:</span><span class="s1"> 0.4g</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+    <span class="nb">sum</span> <span class="o">+=</span> <span class="n">weights</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">Y</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The total sum of elements is: </span><span class="si">{</span><span class="nb">sum</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s1">0.3g</span><span class="si">}</span><span class="s1"> %.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The final mass fraction of Hydrogen (protons) is  0.7258
+The final mass fraction of Helium 4 (Yp) is  0.2741
+----------------------------- 
+
+The final percentage of mass fraction of p is  1
+The final percentage of mass fraction of n is  3.273e-15
+The final percentage of mass fraction of D is  0.0001255
+The final percentage of mass fraction of T is  6.469e-07
+The final percentage of mass fraction of 3 is  4.252e-05
+The final percentage of mass fraction of 4 is  0.3776
+The final percentage of mass fraction of Be is  3.4e-10
+The final percentage of mass fraction of Li is  4.391e-10
+The total sum of elements is: 100 %.
+</pre></div>
+</div>
+<img alt="_images/51838e2002e8c64aa19eb0cecd47e0a16302cea7e85fe8b1f5304bcb2216d670.png" src="_images/51838e2002e8c64aa19eb0cecd47e0a16302cea7e85fe8b1f5304bcb2216d670.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section-0-constants-functions-and-import-statements-typical-pythonic-things">Section 0: Constants, Functions, and Import Statements: Typical Pythonic Things</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section-1-thermodynamics-and-the-time-temperature-relationship">Section 1: Thermodynamics and the Time-Temperature Relationship</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#friedmann-equations">Friedmann Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-temperature-relationships">Time-Temperature Relationships</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-the-weak-rates-and-nuclear-statistical-equilibrium">Section 2: The Weak Rates and Nuclear Statistical Equilibrium</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#section-3-the-strong-rates-and-the-reaction-network">Section 3: The Strong Rates and The Reaction Network</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Aidan Meador-Woodruff and Dragan Huterer
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
